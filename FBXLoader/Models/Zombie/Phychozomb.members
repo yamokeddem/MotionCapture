@@ -1,0 +1,15 @@
+TETE                = Head
+NUQUE		        = Neck
+BRAS_DROIT	        = RightArm
+BRAS_GAUCHE         = LeftArm
+AVANT_BRAS_DROIT    = RightForeArm
+AVANT_BRAS_GAUCHE   = LeftForeArm
+MAIN_DROITE	        = RightHand
+MAIN_GAUCHE	        = LeftHand
+CUISSE_DROITE       = RightUpLeg
+CUISSE_GAUCHE	    = LeftUpLeg
+JAMBE_DROITE	    = RightLeg
+JAMBE_GAUCHE	    = LeftLeg
+PIED_DROITE         = RightFoot
+PIED_GAUCHE	        = LeftFoot
+COLONNE_VERTEBRALE  = Spine

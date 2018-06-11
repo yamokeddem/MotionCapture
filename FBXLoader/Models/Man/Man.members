@@ -1,0 +1,15 @@
+TETE                = Justin:Head
+NUQUE		    = Justin:Neck
+BRAS_DROIT	    = Justin:RightArm
+BRAS_GAUCHE         = Justin:LeftArm
+AVANT_BRAS_DROIT    = Justin:RightForeArm
+AVANT_BRAS_GAUCHE   = Justin:LeftForeArm
+MAIN_DROITE	    = Justin:RightHand
+MAIN_GAUCHE	    = Justin:LeftHand
+CUISSE_DROITE       = Justin:RightUpLeg
+CUISSE_GAUCHE	    = Justin:LeftUpLeg
+JAMBE_DROITE	    = Justin:RightLeg
+JAMBE_GAUCHE	    = Justin:LeftLeg
+PIED_DROITE         = Justin:RightFoot
+PIED_GAUCHE	    = Justin:LeftFoot
+COLONNE_VERTEBRALE  = Justin:Spine

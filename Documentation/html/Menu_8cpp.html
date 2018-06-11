@@ -1,0 +1,622 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MotionCaptureKinect: Référence du fichier src/Menu.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">MotionCaptureKinect
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.14 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','Recherche');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Fonctions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier Menu.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="Window_8h_source.html">Window.h</a>&quot;</code><br />
+<code>#include &lt;GL4D/gl4du.h&gt;</code><br />
+<code>#include &lt;GL4D/gl4duw_SDL2.h&gt;</code><br />
+<code>#include &lt;SDL2/SDL_image.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="Menu_8h_source.html">Menu.h</a>&quot;</code><br />
+<code>#include &quot;assert.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="JointCoordinates_8h_source.html">JointCoordinates.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Logger_8h_source.html">Logger.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="SoundEffect_8h_source.html">SoundEffect.h</a>&quot;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a8b4b2d784d3db0a337206b84b75b7058"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Menu_8cpp.html#a8b4b2d784d3db0a337206b84b75b7058">NUMBER_LAYOUTS</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a8b4b2d784d3db0a337206b84b75b7058"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a124c202b955c3619c3845aada19e77"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Menu_8cpp.html#a3a124c202b955c3619c3845aada19e77">BUTTON_MOCAP</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a3a124c202b955c3619c3845aada19e77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade84e5b5fc088ebec8ea0850196a6b98"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Menu_8cpp.html#ade84e5b5fc088ebec8ea0850196a6b98">BUTTON_GAME</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:ade84e5b5fc088ebec8ea0850196a6b98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dbc17091b8a589fdeda79651aafc2b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Menu_8cpp.html#a1dbc17091b8a589fdeda79651aafc2b5">NUMBER_TEXTURES</a>&#160;&#160;&#160;6</td></tr>
+<tr class="separator:a1dbc17091b8a589fdeda79651aafc2b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20a51b5b0e8a5a7e9bfa8b59b097b3de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Menu_8cpp.html#a20a51b5b0e8a5a7e9bfa8b59b097b3de">TEXTURE_BACKGROUND</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a20a51b5b0e8a5a7e9bfa8b59b097b3de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af456d6ebc5ef544ed07e95f2a710d8ba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Menu_8cpp.html#af456d6ebc5ef544ed07e95f2a710d8ba">TEXTURE_BUTTON_MOCAP</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:af456d6ebc5ef544ed07e95f2a710d8ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a953edcdcb29f0903e0045b1eb318c1c9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Menu_8cpp.html#a953edcdcb29f0903e0045b1eb318c1c9">TEXTURE_BUTTON_GAME</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a953edcdcb29f0903e0045b1eb318c1c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d0977213e790841e2653e8d966bd4a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Menu_8cpp.html#a1d0977213e790841e2653e8d966bd4a2">TEXTURE_NUMBER_1</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a1d0977213e790841e2653e8d966bd4a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21d20b1e332a3f36ee6b2ff7198a2dd8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Menu_8cpp.html#a21d20b1e332a3f36ee6b2ff7198a2dd8">TEXTURE_NUMBER_2</a>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:a21d20b1e332a3f36ee6b2ff7198a2dd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22ab9544bf905b891717770122f45aaf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Menu_8cpp.html#a22ab9544bf905b891717770122f45aaf">TEXTURE_NUMBER_3</a>&#160;&#160;&#160;5</td></tr>
+<tr class="separator:a22ab9544bf905b891717770122f45aaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a539fb5b0f1b763dc1cf8d6501160b2ce"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Menu_8cpp.html#a539fb5b0f1b763dc1cf8d6501160b2ce">initMenu</a> ()</td></tr>
+<tr class="memdesc:a539fb5b0f1b763dc1cf8d6501160b2ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui initialise le Menu avec tous ses layouts.  <a href="#a539fb5b0f1b763dc1cf8d6501160b2ce">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a539fb5b0f1b763dc1cf8d6501160b2ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cb4afb48ac218359be6ba1e4cf80a57"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Menu_8cpp.html#a6cb4afb48ac218359be6ba1e4cf80a57">isClicked</a> (int buttonId)</td></tr>
+<tr class="memdesc:a6cb4afb48ac218359be6ba1e4cf80a57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui test si un bouton a été cliqué ou non, le bouton est considéré comme clique si il est survolé pendant 3 secondes consécutives.  <a href="#a6cb4afb48ac218359be6ba1e4cf80a57">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a6cb4afb48ac218359be6ba1e4cf80a57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae391325329c9342aaee16a59e42f65f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Menu_8cpp.html#ae391325329c9342aaee16a59e42f65f4">zoomLayout</a> (bool zoom, int buttonId)</td></tr>
+<tr class="memdesc:ae391325329c9342aaee16a59e42f65f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui effectue un zoom sur le bouton lorsque celui-ci est survolé par la souris.  <a href="#ae391325329c9342aaee16a59e42f65f4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae391325329c9342aaee16a59e42f65f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9019f0cf5a1fad0b5682a0aade2e929b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Menu_8cpp.html#a9019f0cf5a1fad0b5682a0aade2e929b">setMenuLayoutDimensions</a> ()</td></tr>
+<tr class="memdesc:a9019f0cf5a1fad0b5682a0aade2e929b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui définie les dimensions des layouts en fonction des dimensions de la fenêtre (utilisée dans le cas d'un redimensionnement de fenêtre)  <a href="#a9019f0cf5a1fad0b5682a0aade2e929b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9019f0cf5a1fad0b5682a0aade2e929b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3697182355ceb00169c35c4892a95c53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Menu_8cpp.html#a3697182355ceb00169c35c4892a95c53">drawNumbers</a> (int buttonId, int textureID)</td></tr>
+<tr class="memdesc:a3697182355ceb00169c35c4892a95c53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui affiche le numéro de seconde restente avant le lancement du mode.  <a href="#a3697182355ceb00169c35c4892a95c53">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3697182355ceb00169c35c4892a95c53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc4ea69faac51b01b74622b7996d9939"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Menu_8cpp.html#adc4ea69faac51b01b74622b7996d9939">drawBackgroundMenu</a> ()</td></tr>
+<tr class="memdesc:adc4ea69faac51b01b74622b7996d9939"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui affiche l'arrière plan "animé" du Menu.  <a href="#adc4ea69faac51b01b74622b7996d9939">Plus de détails...</a><br /></td></tr>
+<tr class="separator:adc4ea69faac51b01b74622b7996d9939"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa13653318c21b0e6b86838e6091bfc9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Menu_8cpp.html#aa13653318c21b0e6b86838e6091bfc9a">drawMenu</a> ()</td></tr>
+<tr class="memdesc:aa13653318c21b0e6b86838e6091bfc9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction d'affichage qui affiche l'intégralité du Menu et ses layouts.  <a href="#aa13653318c21b0e6b86838e6091bfc9a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa13653318c21b0e6b86838e6091bfc9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab761ec84f6452a32d7dbe17e7236a727"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Menu_8cpp.html#ab761ec84f6452a32d7dbe17e7236a727">freeMenu</a> ()</td></tr>
+<tr class="memdesc:ab761ec84f6452a32d7dbe17e7236a727"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui libère la mémoire du mode Menu.  <a href="#ab761ec84f6452a32d7dbe17e7236a727">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab761ec84f6452a32d7dbe17e7236a727"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a277955e34b7de0cf5307f15036a5a293"><td class="memItemLeft" align="right" valign="top">struct timespec start&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Menu_8cpp.html#a277955e34b7de0cf5307f15036a5a293">stop</a></td></tr>
+<tr class="separator:a277955e34b7de0cf5307f15036a5a293"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30b1405f508f0417eba9080537ab9fc4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Menu_8cpp.html#a30b1405f508f0417eba9080537ab9fc4">hooverButton</a> [<a class="el" href="Menu_8cpp.html#a8b4b2d784d3db0a337206b84b75b7058">NUMBER_LAYOUTS</a>] = {false}</td></tr>
+<tr class="separator:a30b1405f508f0417eba9080537ab9fc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67d3022ea2b9bc4c5453f9918cdb0d5e"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Menu_8cpp.html#a67d3022ea2b9bc4c5453f9918cdb0d5e">_texturesId</a> [<a class="el" href="Menu_8cpp.html#a1dbc17091b8a589fdeda79651aafc2b5">NUMBER_TEXTURES</a>]</td></tr>
+<tr class="separator:a67d3022ea2b9bc4c5453f9918cdb0d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8484beb0231cb5808cda3effc711e02d"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Menu_8cpp.html#a8484beb0231cb5808cda3effc711e02d">files</a> []</td></tr>
+<tr class="separator:a8484beb0231cb5808cda3effc711e02d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae1cd1bfddeae69e40f8ec6947899448"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Window_8h.html#a3c290a2c8b02498d579e18dff800a433">pLayout</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Menu_8cpp.html#aae1cd1bfddeae69e40f8ec6947899448">_layoutMenu</a> [2]</td></tr>
+<tr class="separator:aae1cd1bfddeae69e40f8ec6947899448"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab071c1de527ced13cbe547188b9b57dc"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Menu_8cpp.html#ab071c1de527ced13cbe547188b9b57dc">quadBackground</a></td></tr>
+<tr class="separator:ab071c1de527ced13cbe547188b9b57dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5689d2aeb9bcec4e4c6dd321e75750fe"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Menu_8cpp.html#a5689d2aeb9bcec4e4c6dd321e75750fe">quadSablier</a></td></tr>
+<tr class="separator:a5689d2aeb9bcec4e4c6dd321e75750fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des macros</h2>
+<a id="ade84e5b5fc088ebec8ea0850196a6b98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade84e5b5fc088ebec8ea0850196a6b98">&#9670;&nbsp;</a></span>BUTTON_GAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUTTON_GAME&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Menu_8h.html#aa13653318c21b0e6b86838e6091bfc9a">drawMenu()</a>, <a class="el" href="Menu_8h.html#a539fb5b0f1b763dc1cf8d6501160b2ce">initMenu()</a>, et <a class="el" href="Menu_8h.html#a9019f0cf5a1fad0b5682a0aade2e929b">setMenuLayoutDimensions()</a>.</p>
+
+</div>
+</div>
+<a id="a3a124c202b955c3619c3845aada19e77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a124c202b955c3619c3845aada19e77">&#9670;&nbsp;</a></span>BUTTON_MOCAP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUTTON_MOCAP&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Menu_8h.html#aa13653318c21b0e6b86838e6091bfc9a">drawMenu()</a>, <a class="el" href="Menu_8h.html#a539fb5b0f1b763dc1cf8d6501160b2ce">initMenu()</a>, et <a class="el" href="Menu_8h.html#a9019f0cf5a1fad0b5682a0aade2e929b">setMenuLayoutDimensions()</a>.</p>
+
+</div>
+</div>
+<a id="a8b4b2d784d3db0a337206b84b75b7058"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b4b2d784d3db0a337206b84b75b7058">&#9670;&nbsp;</a></span>NUMBER_LAYOUTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NUMBER_LAYOUTS&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Menu_8h.html#ab761ec84f6452a32d7dbe17e7236a727">freeMenu()</a>, <a class="el" href="Menu_8h.html#a539fb5b0f1b763dc1cf8d6501160b2ce">initMenu()</a>, et <a class="el" href="Menu_8cpp.html#a6cb4afb48ac218359be6ba1e4cf80a57">isClicked()</a>.</p>
+
+</div>
+</div>
+<a id="a1dbc17091b8a589fdeda79651aafc2b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dbc17091b8a589fdeda79651aafc2b5">&#9670;&nbsp;</a></span>NUMBER_TEXTURES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NUMBER_TEXTURES&#160;&#160;&#160;6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Menu_8h.html#ab761ec84f6452a32d7dbe17e7236a727">freeMenu()</a>, et <a class="el" href="Menu_8h.html#a539fb5b0f1b763dc1cf8d6501160b2ce">initMenu()</a>.</p>
+
+</div>
+</div>
+<a id="a20a51b5b0e8a5a7e9bfa8b59b097b3de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20a51b5b0e8a5a7e9bfa8b59b097b3de">&#9670;&nbsp;</a></span>TEXTURE_BACKGROUND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TEXTURE_BACKGROUND&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Menu_8cpp.html#adc4ea69faac51b01b74622b7996d9939">drawBackgroundMenu()</a>.</p>
+
+</div>
+</div>
+<a id="a953edcdcb29f0903e0045b1eb318c1c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a953edcdcb29f0903e0045b1eb318c1c9">&#9670;&nbsp;</a></span>TEXTURE_BUTTON_GAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TEXTURE_BUTTON_GAME&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Menu_8h.html#aa13653318c21b0e6b86838e6091bfc9a">drawMenu()</a>.</p>
+
+</div>
+</div>
+<a id="af456d6ebc5ef544ed07e95f2a710d8ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af456d6ebc5ef544ed07e95f2a710d8ba">&#9670;&nbsp;</a></span>TEXTURE_BUTTON_MOCAP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TEXTURE_BUTTON_MOCAP&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Menu_8h.html#aa13653318c21b0e6b86838e6091bfc9a">drawMenu()</a>.</p>
+
+</div>
+</div>
+<a id="a1d0977213e790841e2653e8d966bd4a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d0977213e790841e2653e8d966bd4a2">&#9670;&nbsp;</a></span>TEXTURE_NUMBER_1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TEXTURE_NUMBER_1&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Menu_8cpp.html#a6cb4afb48ac218359be6ba1e4cf80a57">isClicked()</a>.</p>
+
+</div>
+</div>
+<a id="a21d20b1e332a3f36ee6b2ff7198a2dd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21d20b1e332a3f36ee6b2ff7198a2dd8">&#9670;&nbsp;</a></span>TEXTURE_NUMBER_2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TEXTURE_NUMBER_2&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Menu_8cpp.html#a6cb4afb48ac218359be6ba1e4cf80a57">isClicked()</a>.</p>
+
+</div>
+</div>
+<a id="a22ab9544bf905b891717770122f45aaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22ab9544bf905b891717770122f45aaf">&#9670;&nbsp;</a></span>TEXTURE_NUMBER_3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TEXTURE_NUMBER_3&#160;&#160;&#160;5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Menu_8cpp.html#a6cb4afb48ac218359be6ba1e4cf80a57">isClicked()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="adc4ea69faac51b01b74622b7996d9939"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc4ea69faac51b01b74622b7996d9939">&#9670;&nbsp;</a></span>drawBackgroundMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawBackgroundMenu </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui affiche l'arrière plan "animé" du Menu. </p>
+
+<p class="reference">Références <a class="el" href="Menu_8cpp.html#a67d3022ea2b9bc4c5453f9918cdb0d5e">_texturesId</a>, <a class="el" href="Window_8cpp.html#a5b25a069d46e2c8963f7a855f6a3582c">_windowHeight</a>, <a class="el" href="Window_8cpp.html#ac3fccedccc56d04d622b5745485a7568">_windowWidth</a>, <a class="el" href="Menu_8cpp.html#ab071c1de527ced13cbe547188b9b57dc">quadBackground</a>, et <a class="el" href="Menu_8cpp.html#a20a51b5b0e8a5a7e9bfa8b59b097b3de">TEXTURE_BACKGROUND</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Menu_8h.html#aa13653318c21b0e6b86838e6091bfc9a">drawMenu()</a>.</p>
+
+</div>
+</div>
+<a id="aa13653318c21b0e6b86838e6091bfc9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa13653318c21b0e6b86838e6091bfc9a">&#9670;&nbsp;</a></span>drawMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawMenu </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction d'affichage qui affiche l'intégralité du Menu et ses layouts. </p>
+
+<p class="reference">Références <a class="el" href="Menu_8cpp.html#aae1cd1bfddeae69e40f8ec6947899448">_layoutMenu</a>, <a class="el" href="Menu_8cpp.html#a67d3022ea2b9bc4c5453f9918cdb0d5e">_texturesId</a>, <a class="el" href="Window_8cpp.html#a771cfbc1261b70be5e727700a78ac7cd">adaptTheLandmark()</a>, <a class="el" href="Menu_8cpp.html#ade84e5b5fc088ebec8ea0850196a6b98">BUTTON_GAME</a>, <a class="el" href="Menu_8cpp.html#a3a124c202b955c3619c3845aada19e77">BUTTON_MOCAP</a>, <a class="el" href="Menu_8cpp.html#adc4ea69faac51b01b74622b7996d9939">drawBackgroundMenu()</a>, <a class="el" href="Window_8h.html#a81dbe4cce536eb83872b539079ba4139">GAME</a>, <a class="el" href="Logger_8h.html#a7924ea74aab3505597ab4b3db868bafe">GlobalLogger</a>, <a class="el" href="Menu_8cpp.html#a6cb4afb48ac218359be6ba1e4cf80a57">isClicked()</a>, <a class="el" href="Window_8h.html#ae4ab47b2f8b3a39cbfd7d95e280cf6ac">MOCAP</a>, <a class="el" href="Window_8cpp.html#a3daa5985cb85baab76287f95f11adf11">MODE</a>, <a class="el" href="Menu_8cpp.html#a953edcdcb29f0903e0045b1eb318c1c9">TEXTURE_BUTTON_GAME</a>, et <a class="el" href="Menu_8cpp.html#af456d6ebc5ef544ed07e95f2a710d8ba">TEXTURE_BUTTON_MOCAP</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Window_8cpp.html#a96a68ee53ffcf494ca60f94ac05d94bb">draw()</a>.</p>
+
+</div>
+</div>
+<a id="a3697182355ceb00169c35c4892a95c53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3697182355ceb00169c35c4892a95c53">&#9670;&nbsp;</a></span>drawNumbers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawNumbers </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>buttonId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>textureID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui affiche le numéro de seconde restente avant le lancement du mode. </p>
+
+<p class="reference">Références <a class="el" href="Menu_8cpp.html#aae1cd1bfddeae69e40f8ec6947899448">_layoutMenu</a>, <a class="el" href="Menu_8cpp.html#a67d3022ea2b9bc4c5453f9918cdb0d5e">_texturesId</a>, <a class="el" href="Menu_8cpp.html#a5689d2aeb9bcec4e4c6dd321e75750fe">quadSablier</a>, <a class="el" href="structSLayout.html#aaf8065b600d34ab2e266e83321904371">SLayout::width</a>, <a class="el" href="structSLayout.html#a27042e17ce4eb84fe4fabed803f4621f">SLayout::x</a>, et <a class="el" href="structSLayout.html#abebcdf3802f667c96ac054a13a3b949b">SLayout::y</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Menu_8cpp.html#a6cb4afb48ac218359be6ba1e4cf80a57">isClicked()</a>.</p>
+
+</div>
+</div>
+<a id="ab761ec84f6452a32d7dbe17e7236a727"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab761ec84f6452a32d7dbe17e7236a727">&#9670;&nbsp;</a></span>freeMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void freeMenu </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui libère la mémoire du mode Menu. </p>
+
+<p class="reference">Références <a class="el" href="Menu_8cpp.html#aae1cd1bfddeae69e40f8ec6947899448">_layoutMenu</a>, <a class="el" href="Menu_8cpp.html#a67d3022ea2b9bc4c5453f9918cdb0d5e">_texturesId</a>, <a class="el" href="Logger_8h.html#a7924ea74aab3505597ab4b3db868bafe">GlobalLogger</a>, <a class="el" href="Menu_8cpp.html#a8b4b2d784d3db0a337206b84b75b7058">NUMBER_LAYOUTS</a>, et <a class="el" href="Menu_8cpp.html#a1dbc17091b8a589fdeda79651aafc2b5">NUMBER_TEXTURES</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Window_8h.html#a0536355d9188bc1f1591f2cf42d0b87d">quit()</a>.</p>
+
+</div>
+</div>
+<a id="a539fb5b0f1b763dc1cf8d6501160b2ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a539fb5b0f1b763dc1cf8d6501160b2ce">&#9670;&nbsp;</a></span>initMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int initMenu </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui initialise le Menu avec tous ses layouts. </p>
+
+<p class="reference">Références <a class="el" href="Menu_8cpp.html#aae1cd1bfddeae69e40f8ec6947899448">_layoutMenu</a>, <a class="el" href="Menu_8cpp.html#a67d3022ea2b9bc4c5453f9918cdb0d5e">_texturesId</a>, <a class="el" href="Menu_8cpp.html#ade84e5b5fc088ebec8ea0850196a6b98">BUTTON_GAME</a>, <a class="el" href="Menu_8cpp.html#a3a124c202b955c3619c3845aada19e77">BUTTON_MOCAP</a>, <a class="el" href="Menu_8cpp.html#a8484beb0231cb5808cda3effc711e02d">files</a>, <a class="el" href="Logger_8h.html#a7924ea74aab3505597ab4b3db868bafe">GlobalLogger</a>, <a class="el" href="Menu_8cpp.html#a8b4b2d784d3db0a337206b84b75b7058">NUMBER_LAYOUTS</a>, <a class="el" href="Menu_8cpp.html#a1dbc17091b8a589fdeda79651aafc2b5">NUMBER_TEXTURES</a>, <a class="el" href="Menu_8cpp.html#ab071c1de527ced13cbe547188b9b57dc">quadBackground</a>, <a class="el" href="Menu_8cpp.html#a5689d2aeb9bcec4e4c6dd321e75750fe">quadSablier</a>, <a class="el" href="Menu_8cpp.html#a9019f0cf5a1fad0b5682a0aade2e929b">setMenuLayoutDimensions()</a>, et <a class="el" href="structSLayout.html#ae690896feddb1225944931f24e88ffbd">SLayout::surface</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Window_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>.</p>
+
+</div>
+</div>
+<a id="a6cb4afb48ac218359be6ba1e4cf80a57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cb4afb48ac218359be6ba1e4cf80a57">&#9670;&nbsp;</a></span>isClicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isClicked </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>buttonId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui test si un bouton a été cliqué ou non, le bouton est considéré comme clique si il est survolé pendant 3 secondes consécutives. </p>
+
+<p class="reference">Références <a class="el" href="Menu_8cpp.html#aae1cd1bfddeae69e40f8ec6947899448">_layoutMenu</a>, <a class="el" href="Menu_8cpp.html#a3697182355ceb00169c35c4892a95c53">drawNumbers()</a>, <a class="el" href="structSLayout.html#a1f84f90bf878d0f9da545e92b9182da2">SLayout::height</a>, <a class="el" href="Menu_8cpp.html#a30b1405f508f0417eba9080537ab9fc4">hooverButton</a>, <a class="el" href="classJointCoordinates.html#a26ea9dfbda1d692b972e7c7500c0486a">JointCoordinates::isAvailable()</a>, <a class="el" href="SoundEffect_8h.html#add9d1ebe16c65bb87617d7d670b45e9e">LOOP_ONCE</a>, <a class="el" href="JointCoordinates_8h.html#a6ef3e9f894d04e54eefe482959768049">MAIN_DROITE</a>, <a class="el" href="JointCoordinates_8h.html#aea9c12696be083192af116082ff4b1bd">MAIN_GAUCHE</a>, <a class="el" href="Menu_8cpp.html#a8b4b2d784d3db0a337206b84b75b7058">NUMBER_LAYOUTS</a>, <a class="el" href="SoundEffect_8cpp.html#adb77e3a5151a6d1edb1c7f45a4c2186d">playSound()</a>, <a class="el" href="SoundEffect_8h.html#ac3e95d79ce2c82fe11ad6c5c15130a37">SOUND_EFFECT_BIP</a>, <a class="el" href="Menu_8cpp.html#a277955e34b7de0cf5307f15036a5a293">stop</a>, <a class="el" href="Menu_8cpp.html#a1d0977213e790841e2653e8d966bd4a2">TEXTURE_NUMBER_1</a>, <a class="el" href="Menu_8cpp.html#a21d20b1e332a3f36ee6b2ff7198a2dd8">TEXTURE_NUMBER_2</a>, <a class="el" href="Menu_8cpp.html#a22ab9544bf905b891717770122f45aaf">TEXTURE_NUMBER_3</a>, <a class="el" href="structSLayout.html#aaf8065b600d34ab2e266e83321904371">SLayout::width</a>, <a class="el" href="classJointCoordinates.html#a09da9ca56ed6939e794d8cd7570e03c9">JointCoordinates::x</a>, <a class="el" href="structSLayout.html#a27042e17ce4eb84fe4fabed803f4621f">SLayout::x</a>, <a class="el" href="classJointCoordinates.html#a85353b819653a764314bd0ba2db2e63f">JointCoordinates::y</a>, <a class="el" href="structSLayout.html#abebcdf3802f667c96ac054a13a3b949b">SLayout::y</a>, et <a class="el" href="Menu_8cpp.html#ae391325329c9342aaee16a59e42f65f4">zoomLayout()</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Menu_8h.html#aa13653318c21b0e6b86838e6091bfc9a">drawMenu()</a>.</p>
+
+</div>
+</div>
+<a id="a9019f0cf5a1fad0b5682a0aade2e929b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9019f0cf5a1fad0b5682a0aade2e929b">&#9670;&nbsp;</a></span>setMenuLayoutDimensions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setMenuLayoutDimensions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui définie les dimensions des layouts en fonction des dimensions de la fenêtre (utilisée dans le cas d'un redimensionnement de fenêtre) </p>
+
+<p class="reference">Références <a class="el" href="Menu_8cpp.html#aae1cd1bfddeae69e40f8ec6947899448">_layoutMenu</a>, <a class="el" href="Window_8cpp.html#a5b25a069d46e2c8963f7a855f6a3582c">_windowHeight</a>, <a class="el" href="Window_8cpp.html#ac3fccedccc56d04d622b5745485a7568">_windowWidth</a>, <a class="el" href="Menu_8cpp.html#ade84e5b5fc088ebec8ea0850196a6b98">BUTTON_GAME</a>, <a class="el" href="Menu_8cpp.html#a3a124c202b955c3619c3845aada19e77">BUTTON_MOCAP</a>, <a class="el" href="structSLayout.html#a1f84f90bf878d0f9da545e92b9182da2">SLayout::height</a>, <a class="el" href="structSLayout.html#aaf8065b600d34ab2e266e83321904371">SLayout::width</a>, <a class="el" href="structSLayout.html#a27042e17ce4eb84fe4fabed803f4621f">SLayout::x</a>, et <a class="el" href="structSLayout.html#abebcdf3802f667c96ac054a13a3b949b">SLayout::y</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Menu_8h.html#a539fb5b0f1b763dc1cf8d6501160b2ce">initMenu()</a>, et <a class="el" href="Window_8cpp.html#af688f736fe334518ea87e767182333c6">resize()</a>.</p>
+
+</div>
+</div>
+<a id="ae391325329c9342aaee16a59e42f65f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae391325329c9342aaee16a59e42f65f4">&#9670;&nbsp;</a></span>zoomLayout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zoomLayout </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>zoom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>buttonId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui effectue un zoom sur le bouton lorsque celui-ci est survolé par la souris. </p>
+
+<p class="reference">Références <a class="el" href="Menu_8cpp.html#aae1cd1bfddeae69e40f8ec6947899448">_layoutMenu</a>, <a class="el" href="Window_8cpp.html#a5b25a069d46e2c8963f7a855f6a3582c">_windowHeight</a>, <a class="el" href="Window_8cpp.html#ac3fccedccc56d04d622b5745485a7568">_windowWidth</a>, <a class="el" href="structSLayout.html#a1f84f90bf878d0f9da545e92b9182da2">SLayout::height</a>, et <a class="el" href="structSLayout.html#aaf8065b600d34ab2e266e83321904371">SLayout::width</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Menu_8cpp.html#a6cb4afb48ac218359be6ba1e4cf80a57">isClicked()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des variables</h2>
+<a id="aae1cd1bfddeae69e40f8ec6947899448"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae1cd1bfddeae69e40f8ec6947899448">&#9670;&nbsp;</a></span>_layoutMenu</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Window_8h.html#a3c290a2c8b02498d579e18dff800a433">pLayout</a> _layoutMenu[2]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Menu_8h.html#aa13653318c21b0e6b86838e6091bfc9a">drawMenu()</a>, <a class="el" href="Menu_8h.html#a3697182355ceb00169c35c4892a95c53">drawNumbers()</a>, <a class="el" href="Menu_8h.html#ab761ec84f6452a32d7dbe17e7236a727">freeMenu()</a>, <a class="el" href="Menu_8h.html#a539fb5b0f1b763dc1cf8d6501160b2ce">initMenu()</a>, <a class="el" href="Menu_8cpp.html#a6cb4afb48ac218359be6ba1e4cf80a57">isClicked()</a>, <a class="el" href="Menu_8h.html#a9019f0cf5a1fad0b5682a0aade2e929b">setMenuLayoutDimensions()</a>, et <a class="el" href="Menu_8h.html#ae391325329c9342aaee16a59e42f65f4">zoomLayout()</a>.</p>
+
+</div>
+</div>
+<a id="a67d3022ea2b9bc4c5453f9918cdb0d5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67d3022ea2b9bc4c5453f9918cdb0d5e">&#9670;&nbsp;</a></span>_texturesId</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint _texturesId[<a class="el" href="Menu_8cpp.html#a1dbc17091b8a589fdeda79651aafc2b5">NUMBER_TEXTURES</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Menu_8cpp.html#adc4ea69faac51b01b74622b7996d9939">drawBackgroundMenu()</a>, <a class="el" href="Menu_8h.html#aa13653318c21b0e6b86838e6091bfc9a">drawMenu()</a>, <a class="el" href="Menu_8h.html#a3697182355ceb00169c35c4892a95c53">drawNumbers()</a>, <a class="el" href="Menu_8h.html#ab761ec84f6452a32d7dbe17e7236a727">freeMenu()</a>, et <a class="el" href="Menu_8h.html#a539fb5b0f1b763dc1cf8d6501160b2ce">initMenu()</a>.</p>
+
+</div>
+</div>
+<a id="a8484beb0231cb5808cda3effc711e02d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8484beb0231cb5808cda3effc711e02d">&#9670;&nbsp;</a></span>files</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* files[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur initiale :</b><div class="fragment"><div class="line">= {<span class="stringliteral">&quot;Pictures/Menu/background.jpg&quot;</span>,</div><div class="line">                       <span class="stringliteral">&quot;Pictures/Menu/button1.png&quot;</span>,</div><div class="line">                       <span class="stringliteral">&quot;Pictures/Menu/button2.png&quot;</span>,</div><div class="line">                       <span class="stringliteral">&quot;Pictures/Menu/1.png&quot;</span>,</div><div class="line">                       <span class="stringliteral">&quot;Pictures/Menu/2.png&quot;</span>,</div><div class="line">                       <span class="stringliteral">&quot;Pictures/Menu/3.png&quot;</span>}</div></div><!-- fragment -->
+<p class="reference">Référencé par <a class="el" href="Menu_8h.html#a539fb5b0f1b763dc1cf8d6501160b2ce">initMenu()</a>, <a class="el" href="Mocap_8cpp.html#a6c471bec29122fd03997225028ad02c2">initTextures()</a>, et <a class="el" href="Skybox_8h.html#a193c6517df3b5f1582737f9f527bee42">loadPicturesSkybox()</a>.</p>
+
+</div>
+</div>
+<a id="a30b1405f508f0417eba9080537ab9fc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30b1405f508f0417eba9080537ab9fc4">&#9670;&nbsp;</a></span>hooverButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool hooverButton[<a class="el" href="Menu_8cpp.html#a8b4b2d784d3db0a337206b84b75b7058">NUMBER_LAYOUTS</a>] = {false}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Menu_8cpp.html#a6cb4afb48ac218359be6ba1e4cf80a57">isClicked()</a>.</p>
+
+</div>
+</div>
+<a id="ab071c1de527ced13cbe547188b9b57dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab071c1de527ced13cbe547188b9b57dc">&#9670;&nbsp;</a></span>quadBackground</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint quadBackground</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Menu_8cpp.html#adc4ea69faac51b01b74622b7996d9939">drawBackgroundMenu()</a>, et <a class="el" href="Menu_8h.html#a539fb5b0f1b763dc1cf8d6501160b2ce">initMenu()</a>.</p>
+
+</div>
+</div>
+<a id="a5689d2aeb9bcec4e4c6dd321e75750fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5689d2aeb9bcec4e4c6dd321e75750fe">&#9670;&nbsp;</a></span>quadSablier</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint quadSablier</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Menu_8h.html#a3697182355ceb00169c35c4892a95c53">drawNumbers()</a>, et <a class="el" href="Menu_8h.html#a539fb5b0f1b763dc1cf8d6501160b2ce">initMenu()</a>.</p>
+
+</div>
+</div>
+<a id="a277955e34b7de0cf5307f15036a5a293"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a277955e34b7de0cf5307f15036a5a293">&#9670;&nbsp;</a></span>stop</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct timespec start stop</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Menu_8cpp.html#a6cb4afb48ac218359be6ba1e4cf80a57">isClicked()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

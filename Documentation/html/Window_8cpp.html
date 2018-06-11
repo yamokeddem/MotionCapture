@@ -1,0 +1,552 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MotionCaptureKinect: Référence du fichier src/Window.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">MotionCaptureKinect
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.14 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','Recherche');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Structures de données</a> &#124;
+<a href="#typedef-members">Définitions de type</a> &#124;
+<a href="#func-members">Fonctions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier Window.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="Window_8h_source.html">Window.h</a>&quot;</code><br />
+<code>#include &lt;GL4D/gl4duw_SDL2.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="NiTE_8h_source.html">NiTE.h</a>&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="SceneContext_8h_source.html">SceneContext.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="JointCoordinates_8h_source.html">JointCoordinates.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Logger_8h_source.html">Logger.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Skybox_8h_source.html">Skybox.h</a>&quot;</code><br />
+<code>#include &lt;SDL2/SDL_image.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="Game_8h_source.html">Game.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Menu_8h_source.html">Menu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Device_8h_source.html">Device.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Mocap_8h_source.html">Mocap.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="SoundEffect_8h_source.html">SoundEffect.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CalibrationMode_8h_source.html">CalibrationMode.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CppUnitTest_8h_source.html">CppUnitTest.h</a>&quot;</code><br />
+<code>#include &lt;GL/freeglut.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvertex.html">vertex</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Définitions de type</h2></td></tr>
+<tr class="memitem:ad0f5923379e298b172ea5ab8ae5b0eeb"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structvertex.html">vertex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Window_8cpp.html#ad0f5923379e298b172ea5ab8ae5b0eeb">vertex</a></td></tr>
+<tr class="separator:ad0f5923379e298b172ea5ab8ae5b0eeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:ad1a331659084ed2a357c1143658dc006"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Window_8cpp.html#ad1a331659084ed2a357c1143658dc006">initWindow</a> (int argc, char **argv)</td></tr>
+<tr class="memdesc:ad1a331659084ed2a357c1143658dc006"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui initialise la fen�tre.  <a href="#ad1a331659084ed2a357c1143658dc006">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ad1a331659084ed2a357c1143658dc006"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0048a8f3dcbdcf6c5f2b8164a7026a5b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Window_8cpp.html#a0048a8f3dcbdcf6c5f2b8164a7026a5b">initOpenGL</a> ()</td></tr>
+<tr class="memdesc:a0048a8f3dcbdcf6c5f2b8164a7026a5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui initialise les param�tres OpenGL.  <a href="#a0048a8f3dcbdcf6c5f2b8164a7026a5b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0048a8f3dcbdcf6c5f2b8164a7026a5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46a5658306cbd9aa31bd35c564aa00e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Window_8cpp.html#a46a5658306cbd9aa31bd35c564aa00e1">initLog4CXX</a> ()</td></tr>
+<tr class="memdesc:a46a5658306cbd9aa31bd35c564aa00e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui initialise le framework Log4CXX.  <a href="#a46a5658306cbd9aa31bd35c564aa00e1">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a46a5658306cbd9aa31bd35c564aa00e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af688f736fe334518ea87e767182333c6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Window_8cpp.html#af688f736fe334518ea87e767182333c6">resize</a> (int w, int h)</td></tr>
+<tr class="memdesc:af688f736fe334518ea87e767182333c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette fonction parametre la vue (viewport) OpenGL en fonction des dimensions de la fen�tre.  <a href="#af688f736fe334518ea87e767182333c6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af688f736fe334518ea87e767182333c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96a68ee53ffcf494ca60f94ac05d94bb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Window_8cpp.html#a96a68ee53ffcf494ca60f94ac05d94bb">draw</a> (void)</td></tr>
+<tr class="memdesc:a96a68ee53ffcf494ca60f94ac05d94bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">dessine dans le contexte OpenGL actif.  <a href="#a96a68ee53ffcf494ca60f94ac05d94bb">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a96a68ee53ffcf494ca60f94ac05d94bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab36adeaf63eed2490edca3408eac9c06"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Window_8cpp.html#ab36adeaf63eed2490edca3408eac9c06">keydown</a> (int keycode)</td></tr>
+<tr class="memdesc:ab36adeaf63eed2490edca3408eac9c06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui g�re les �venements clavier.  <a href="#ab36adeaf63eed2490edca3408eac9c06">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab36adeaf63eed2490edca3408eac9c06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Window_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
+<tr class="memdesc:a3c04138a5bfe5d72780bb7e82a18e627"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction Main du programme.  <a href="#a3c04138a5bfe5d72780bb7e82a18e627">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a771cfbc1261b70be5e727700a78ac7cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Window_8cpp.html#a771cfbc1261b70be5e727700a78ac7cd">adaptTheLandmark</a> ()</td></tr>
+<tr class="memdesc:a771cfbc1261b70be5e727700a78ac7cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet d'adapter le rep�re en fonction du MODE choisis.  <a href="#a771cfbc1261b70be5e727700a78ac7cd">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a771cfbc1261b70be5e727700a78ac7cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0536355d9188bc1f1591f2cf42d0b87d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Window_8cpp.html#a0536355d9188bc1f1591f2cf42d0b87d">quit</a> (void)</td></tr>
+<tr class="memdesc:a0536355d9188bc1f1591f2cf42d0b87d"><td class="mdescLeft">&#160;</td><td class="mdescRight">appel�e au moment de sortir du programme (atexit), lib�re les �l�ments utilis�s  <a href="#a0536355d9188bc1f1591f2cf42d0b87d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0536355d9188bc1f1591f2cf42d0b87d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a48f76a8c0dc23567f303ed6aa221e078"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Window_8cpp.html#a48f76a8c0dc23567f303ed6aa221e078">DEBUG</a> = 1</td></tr>
+<tr class="separator:a48f76a8c0dc23567f303ed6aa221e078"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3daa5985cb85baab76287f95f11adf11"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Window_8cpp.html#a3daa5985cb85baab76287f95f11adf11">MODE</a> = <a class="el" href="Window_8h.html#a4ddd570ad03298cdcf6728dcc3b82985">CALIBRATION</a></td></tr>
+<tr class="separator:a3daa5985cb85baab76287f95f11adf11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18e855ffb8ebed48e50d344da977dd76"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcam__t.html">cam_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Window_8cpp.html#a18e855ffb8ebed48e50d344da977dd76">_cam</a> = {0, 50, 0}</td></tr>
+<tr class="separator:a18e855ffb8ebed48e50d344da977dd76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3fccedccc56d04d622b5745485a7568"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Window_8cpp.html#ac3fccedccc56d04d622b5745485a7568">_windowWidth</a> = 800</td></tr>
+<tr class="separator:ac3fccedccc56d04d622b5745485a7568"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b25a069d46e2c8963f7a855f6a3582c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Window_8cpp.html#a5b25a069d46e2c8963f7a855f6a3582c">_windowHeight</a> = 600</td></tr>
+<tr class="separator:a5b25a069d46e2c8963f7a855f6a3582c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3581acec97a4372cbca598533b80dc6"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Window_8cpp.html#ae3581acec97a4372cbca598533b80dc6">_pIdFBX</a> = 0</td></tr>
+<tr class="separator:ae3581acec97a4372cbca598533b80dc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7924ea74aab3505597ab4b3db868bafe"><td class="memItemLeft" align="right" valign="top">LoggerPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Window_8cpp.html#a7924ea74aab3505597ab4b3db868bafe">GlobalLogger</a></td></tr>
+<tr class="separator:a7924ea74aab3505597ab4b3db868bafe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des définitions de type</h2>
+<a id="ad0f5923379e298b172ea5ab8ae5b0eeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0f5923379e298b172ea5ab8ae5b0eeb">&#9670;&nbsp;</a></span>vertex</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structvertex.html">vertex</a> <a class="el" href="structvertex.html">vertex</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a771cfbc1261b70be5e727700a78ac7cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a771cfbc1261b70be5e727700a78ac7cd">&#9670;&nbsp;</a></span>adaptTheLandmark()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void adaptTheLandmark </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui permet d'adapter le rep�re en fonction du MODE choisis. </p>
+<ul>
+<li>MODE CALIBRATION, MENU, ET MOCAP : rep�re orthogonale</li>
+<li>MODE GAME : rep�re Frustum </li>
+</ul>
+
+<p class="reference">Références <a class="el" href="Window_8cpp.html#a5b25a069d46e2c8963f7a855f6a3582c">_windowHeight</a>, <a class="el" href="Window_8cpp.html#ac3fccedccc56d04d622b5745485a7568">_windowWidth</a>, <a class="el" href="Window_8h.html#a81dbe4cce536eb83872b539079ba4139">GAME</a>, et <a class="el" href="Window_8cpp.html#a3daa5985cb85baab76287f95f11adf11">MODE</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Menu_8h.html#aa13653318c21b0e6b86838e6091bfc9a">drawMenu()</a>, <a class="el" href="Window_8cpp.html#af688f736fe334518ea87e767182333c6">resize()</a>, et <a class="el" href="Mocap_8cpp.html#a7387b0a732dd0e6cddfa0edf847a59cf">testPoseExit()</a>.</p>
+
+</div>
+</div>
+<a id="a96a68ee53ffcf494ca60f94ac05d94bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96a68ee53ffcf494ca60f94ac05d94bb">&#9670;&nbsp;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void draw </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>dessine dans le contexte OpenGL actif. </p>
+
+<p class="reference">Références <a class="el" href="Window_8cpp.html#a18e855ffb8ebed48e50d344da977dd76">_cam</a>, <a class="el" href="Window_8cpp.html#ae3581acec97a4372cbca598533b80dc6">_pIdFBX</a>, <a class="el" href="Window_8cpp.html#a5b25a069d46e2c8963f7a855f6a3582c">_windowHeight</a>, <a class="el" href="Mocap_8cpp.html#ac4046159c4db741eff35a955c5e6ac93">calculateMembersAngle()</a>, <a class="el" href="Window_8h.html#a4ddd570ad03298cdcf6728dcc3b82985">CALIBRATION</a>, <a class="el" href="CalibrationMode_8cpp.html#a56fa49d56a7fe56269f3646c8de17c74">CalibrationMode()</a>, <a class="el" href="Window_8cpp.html#a48f76a8c0dc23567f303ed6aa221e078">DEBUG</a>, <a class="el" href="Game_8cpp.html#a04898df17a3b6a6a3c827c1c698da846">drawGame()</a>, <a class="el" href="Menu_8cpp.html#aa13653318c21b0e6b86838e6091bfc9a">drawMenu()</a>, <a class="el" href="Mocap_8cpp.html#a271af2d9baa3f6dafbf76206953e55b6">drawMocap()</a>, <a class="el" href="Window_8h.html#a81dbe4cce536eb83872b539079ba4139">GAME</a>, <a class="el" href="Game_8cpp.html#a328d66dadd9912ad479672699043bb53">lumpos</a>, <a class="el" href="Window_8h.html#ad0d059e6a83d21bea4f4db1c9fbd240b">MENU</a>, <a class="el" href="Window_8h.html#ae4ab47b2f8b3a39cbfd7d95e280cf6ac">MOCAP</a>, <a class="el" href="Window_8cpp.html#a3daa5985cb85baab76287f95f11adf11">MODE</a>, <a class="el" href="Mocap_8cpp.html#a9a0bbf68afce0ff658a9c42487c7bd6f">printHands()</a>, <a class="el" href="Game_8cpp.html#ab00568868933dc93af0ce334ead3a813">setOrientationPlane()</a>, <a class="el" href="structcam__t.html#a2b5d42c99d3fc52b5c92ef9d05786ed2">cam_t::theta</a>, <a class="el" href="Mocap_8cpp.html#a917d1117b31c893877cc84c57894d161">trackUser()</a>, <a class="el" href="structcam__t.html#a101d59bc6740471fcc8380cd8ddcb531">cam_t::x</a>, et <a class="el" href="structcam__t.html#a55f4892a260848ef5e726580db37fa42">cam_t::z</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Window_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>.</p>
+
+</div>
+</div>
+<a id="a46a5658306cbd9aa31bd35c564aa00e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46a5658306cbd9aa31bd35c564aa00e1">&#9670;&nbsp;</a></span>initLog4CXX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initLog4CXX </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui initialise le framework Log4CXX. </p>
+
+<p class="reference">Références <a class="el" href="Window_8cpp.html#a7924ea74aab3505597ab4b3db868bafe">GlobalLogger</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Window_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>.</p>
+
+</div>
+</div>
+<a id="a0048a8f3dcbdcf6c5f2b8164a7026a5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0048a8f3dcbdcf6c5f2b8164a7026a5b">&#9670;&nbsp;</a></span>initOpenGL()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void initOpenGL </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction qui initialise les param�tres OpenGL. </p>
+
+<p class="reference">Références <a class="el" href="Window_8cpp.html#ae3581acec97a4372cbca598533b80dc6">_pIdFBX</a>, <a class="el" href="Window_8cpp.html#a5b25a069d46e2c8963f7a855f6a3582c">_windowHeight</a>, <a class="el" href="Window_8cpp.html#ac3fccedccc56d04d622b5745485a7568">_windowWidth</a>, <a class="el" href="Window_8cpp.html#a7924ea74aab3505597ab4b3db868bafe">GlobalLogger</a>, et <a class="el" href="Window_8cpp.html#af688f736fe334518ea87e767182333c6">resize()</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Window_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>.</p>
+
+</div>
+</div>
+<a id="ad1a331659084ed2a357c1143658dc006"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1a331659084ed2a357c1143658dc006">&#9670;&nbsp;</a></span>initWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int initWindow </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>argv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction qui initialise la fen�tre. </p>
+
+<p class="reference">Références <a class="el" href="Window_8cpp.html#a5b25a069d46e2c8963f7a855f6a3582c">_windowHeight</a>, <a class="el" href="Window_8cpp.html#ac3fccedccc56d04d622b5745485a7568">_windowWidth</a>, et <a class="el" href="Window_8cpp.html#a7924ea74aab3505597ab4b3db868bafe">GlobalLogger</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Window_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>.</p>
+
+</div>
+</div>
+<a id="ab36adeaf63eed2490edca3408eac9c06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab36adeaf63eed2490edca3408eac9c06">&#9670;&nbsp;</a></span>keydown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void keydown </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>keycode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction qui g�re les �venements clavier. </p>
+
+<p class="reference">Références <a class="el" href="Mocap_8cpp.html#a0b7f22583147b8ecbd40b58f014aeb5b">CreateContext()</a>, <a class="el" href="Mocap_8cpp.html#acbbe62b6ec607f44a7046897d0af5265">currentAvatar</a>, <a class="el" href="Mocap_8cpp.html#aab70a074e12d6223c141832a779e9ade">FBXNameMembers</a>, <a class="el" href="Mocap_8cpp.html#af4d0466001de274d21da52c1319d8fc2">FBXPath</a>, <a class="el" href="Window_8cpp.html#a7924ea74aab3505597ab4b3db868bafe">GlobalLogger</a>, <a class="el" href="Mocap_8cpp.html#a7285e846b2e871fac5a9c7b606d3f37b">gSceneContext</a>, <a class="el" href="Window_8h.html#ae4ab47b2f8b3a39cbfd7d95e280cf6ac">MOCAP</a>, <a class="el" href="Window_8cpp.html#a3daa5985cb85baab76287f95f11adf11">MODE</a>, <a class="el" href="Mocap_8h.html#ac9093ab01f3bdd07c6f721e33b88afc7">NUMBER_FBX</a>, et <a class="el" href="Mocap_8cpp.html#a25d7ea23a2e9d7ad361ae7b9d56f6de1">readMembersName()</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Window_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>.</p>
+
+</div>
+</div>
+<a id="a3c04138a5bfe5d72780bb7e82a18e627"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c04138a5bfe5d72780bb7e82a18e627">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>argv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction Main du programme. </p>
+
+<p class="reference">Références <a class="el" href="Window_8cpp.html#a48f76a8c0dc23567f303ed6aa221e078">DEBUG</a>, <a class="el" href="Window_8cpp.html#a96a68ee53ffcf494ca60f94ac05d94bb">draw()</a>, <a class="el" href="Mocap_8cpp.html#a0464e2711327b4982f1868f25cdd3e83">initAvatarMocap()</a>, <a class="el" href="CalibrationMode_8cpp.html#a9aaeb3696100ea6f8e212b39359e2925">initCalibrationMode()</a>, <a class="el" href="Game_8cpp.html#af914d9c0c56eba0cd037f32d5af60cf1">initGame()</a>, <a class="el" href="Window_8cpp.html#a46a5658306cbd9aa31bd35c564aa00e1">initLog4CXX()</a>, <a class="el" href="Menu_8cpp.html#a539fb5b0f1b763dc1cf8d6501160b2ce">initMenu()</a>, <a class="el" href="Device_8cpp.html#a22af2136da18ddd7d6cf06a32eda89f4">initNiteAndOpenNi()</a>, <a class="el" href="Window_8cpp.html#a0048a8f3dcbdcf6c5f2b8164a7026a5b">initOpenGL()</a>, <a class="el" href="Skybox_8cpp.html#a96b018fdff413c7b5c1bde3109fea644">initSkybox()</a>, <a class="el" href="SoundEffect_8cpp.html#aced36400d9e4cd642f77e1c5f9c42ac9">initSoundEffect()</a>, <a class="el" href="Window_8cpp.html#ad1a331659084ed2a357c1143658dc006">initWindow()</a>, <a class="el" href="Window_8cpp.html#ab36adeaf63eed2490edca3408eac9c06">keydown()</a>, <a class="el" href="Window_8cpp.html#a0536355d9188bc1f1591f2cf42d0b87d">quit()</a>, <a class="el" href="Window_8cpp.html#af688f736fe334518ea87e767182333c6">resize()</a>, <a class="el" href="classCPPunitTest.html#a3ec2a26a85820b340be6c2a6cecf00cd">CPPunitTest::Test_DeviceInit()</a>, et <a class="el" href="classCPPunitTest.html#a79752251f11e153d324ec2a5e6c618a6">CPPunitTest::Test_ReturnValue()</a>.</p>
+
+</div>
+</div>
+<a id="a0536355d9188bc1f1591f2cf42d0b87d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0536355d9188bc1f1591f2cf42d0b87d">&#9670;&nbsp;</a></span>quit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void quit </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>appel�e au moment de sortir du programme (atexit), lib�re les �l�ments utilis�s </p>
+
+<p class="reference">Références <a class="el" href="CalibrationMode_8cpp.html#a9af36834b2997d4d40074256f8dcf535">freeCalibrationMode()</a>, <a class="el" href="Device_8cpp.html#aa81c2dd8de485a2bc91c40e12263299a">freeDevice()</a>, <a class="el" href="Game_8cpp.html#a3f1f2de8ad16ee00d98289cf4270761f">freeGame()</a>, <a class="el" href="Menu_8cpp.html#ab761ec84f6452a32d7dbe17e7236a727">freeMenu()</a>, <a class="el" href="Mocap_8cpp.html#abe284ee34e36df76528f48d2dcf1515c">freeMocap()</a>, <a class="el" href="Skybox_8cpp.html#aa03e152f103b939cd8239a2a03174595">freeSkybox()</a>, et <a class="el" href="Window_8cpp.html#a7924ea74aab3505597ab4b3db868bafe">GlobalLogger</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Window_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>, et <a class="el" href="Mocap_8cpp.html#a7387b0a732dd0e6cddfa0edf847a59cf">testPoseExit()</a>.</p>
+
+</div>
+</div>
+<a id="af688f736fe334518ea87e767182333c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af688f736fe334518ea87e767182333c6">&#9670;&nbsp;</a></span>resize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void resize </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cette fonction parametre la vue (viewport) OpenGL en fonction des dimensions de la fen�tre. </p>
+
+<p class="reference">Références <a class="el" href="Window_8cpp.html#a5b25a069d46e2c8963f7a855f6a3582c">_windowHeight</a>, <a class="el" href="Window_8cpp.html#ac3fccedccc56d04d622b5745485a7568">_windowWidth</a>, <a class="el" href="Window_8cpp.html#a771cfbc1261b70be5e727700a78ac7cd">adaptTheLandmark()</a>, <a class="el" href="CalibrationMode_8cpp.html#ad040be7cce64f90c3257104eafb13e20">setCalibrationModeLayoutDimensions()</a>, et <a class="el" href="Menu_8cpp.html#a9019f0cf5a1fad0b5682a0aade2e929b">setMenuLayoutDimensions()</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Window_8cpp.html#a0048a8f3dcbdcf6c5f2b8164a7026a5b">initOpenGL()</a>, et <a class="el" href="Window_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des variables</h2>
+<a id="a18e855ffb8ebed48e50d344da977dd76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18e855ffb8ebed48e50d344da977dd76">&#9670;&nbsp;</a></span>_cam</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcam__t.html">cam_t</a> _cam = {0, 50, 0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Window_8cpp.html#a96a68ee53ffcf494ca60f94ac05d94bb">draw()</a>, <a class="el" href="Game_8h.html#ab00568868933dc93af0ce334ead3a813">setOrientationPlane()</a>, et <a class="el" href="Game_8cpp.html#a6d357ef32b6eb5cd7eefa1085688b56c">testCollision()</a>.</p>
+
+</div>
+</div>
+<a id="ae3581acec97a4372cbca598533b80dc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3581acec97a4372cbca598533b80dc6">&#9670;&nbsp;</a></span>_pIdFBX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint _pIdFBX = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Window_8cpp.html#a96a68ee53ffcf494ca60f94ac05d94bb">draw()</a>, <a class="el" href="Mocap_8cpp.html#a8551ce7c8f0916fc2d9937393521d8eb">drawAvatar()</a>, <a class="el" href="Game_8h.html#a04898df17a3b6a6a3c827c1c698da846">drawGame()</a>, <a class="el" href="Game_8cpp.html#ac3897d17fa2c7356e9447c3801fda26b">drawOneCoin()</a>, <a class="el" href="Game_8h.html#ad8e06baf3b119fde9bb12c050eccc5ef">drawPlane()</a>, <a class="el" href="Mocap_8h.html#a8265dc2eb93655e9b289c61d3d5ab2cf">GetMembersCoordinates()</a>, <a class="el" href="Window_8cpp.html#a0048a8f3dcbdcf6c5f2b8164a7026a5b">initOpenGL()</a>, et <a class="el" href="Mocap_8cpp.html#a64598322ffd1fea52e969a6b0d5d2928">printFrameKinect()</a>.</p>
+
+</div>
+</div>
+<a id="a5b25a069d46e2c8963f7a855f6a3582c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b25a069d46e2c8963f7a855f6a3582c">&#9670;&nbsp;</a></span>_windowHeight</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int _windowHeight = 600</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Window_8h.html#a771cfbc1261b70be5e727700a78ac7cd">adaptTheLandmark()</a>, <a class="el" href="Window_8cpp.html#a96a68ee53ffcf494ca60f94ac05d94bb">draw()</a>, <a class="el" href="Mocap_8cpp.html#a8551ce7c8f0916fc2d9937393521d8eb">drawAvatar()</a>, <a class="el" href="Mocap_8cpp.html#acbd5457c126570af763ea24dc41da830">drawBackground()</a>, <a class="el" href="Menu_8cpp.html#adc4ea69faac51b01b74622b7996d9939">drawBackgroundMenu()</a>, <a class="el" href="Mocap_8h.html#a8265dc2eb93655e9b289c61d3d5ab2cf">GetMembersCoordinates()</a>, <a class="el" href="Mocap_8h.html#a0464e2711327b4982f1868f25cdd3e83">initAvatarMocap()</a>, <a class="el" href="Window_8cpp.html#a0048a8f3dcbdcf6c5f2b8164a7026a5b">initOpenGL()</a>, <a class="el" href="Window_8cpp.html#ad1a331659084ed2a357c1143658dc006">initWindow()</a>, <a class="el" href="Mocap_8cpp.html#a4cfb018f99aac975f16b96dcc459bd9e">printArrows()</a>, <a class="el" href="Mocap_8cpp.html#a64598322ffd1fea52e969a6b0d5d2928">printFrameKinect()</a>, <a class="el" href="Window_8cpp.html#af688f736fe334518ea87e767182333c6">resize()</a>, <a class="el" href="CalibrationMode_8h.html#ad040be7cce64f90c3257104eafb13e20">setCalibrationModeLayoutDimensions()</a>, <a class="el" href="Menu_8h.html#a9019f0cf5a1fad0b5682a0aade2e929b">setMenuLayoutDimensions()</a>, et <a class="el" href="Menu_8h.html#ae391325329c9342aaee16a59e42f65f4">zoomLayout()</a>.</p>
+
+</div>
+</div>
+<a id="ac3fccedccc56d04d622b5745485a7568"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3fccedccc56d04d622b5745485a7568">&#9670;&nbsp;</a></span>_windowWidth</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int _windowWidth = 800</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Window_8h.html#a771cfbc1261b70be5e727700a78ac7cd">adaptTheLandmark()</a>, <a class="el" href="Mocap_8cpp.html#a8551ce7c8f0916fc2d9937393521d8eb">drawAvatar()</a>, <a class="el" href="Mocap_8cpp.html#acbd5457c126570af763ea24dc41da830">drawBackground()</a>, <a class="el" href="Menu_8cpp.html#adc4ea69faac51b01b74622b7996d9939">drawBackgroundMenu()</a>, <a class="el" href="Mocap_8h.html#a8265dc2eb93655e9b289c61d3d5ab2cf">GetMembersCoordinates()</a>, <a class="el" href="Mocap_8h.html#a0464e2711327b4982f1868f25cdd3e83">initAvatarMocap()</a>, <a class="el" href="Window_8cpp.html#a0048a8f3dcbdcf6c5f2b8164a7026a5b">initOpenGL()</a>, <a class="el" href="Window_8cpp.html#ad1a331659084ed2a357c1143658dc006">initWindow()</a>, <a class="el" href="Mocap_8cpp.html#a4cfb018f99aac975f16b96dcc459bd9e">printArrows()</a>, <a class="el" href="Mocap_8cpp.html#a64598322ffd1fea52e969a6b0d5d2928">printFrameKinect()</a>, <a class="el" href="Window_8cpp.html#af688f736fe334518ea87e767182333c6">resize()</a>, <a class="el" href="CalibrationMode_8h.html#ad040be7cce64f90c3257104eafb13e20">setCalibrationModeLayoutDimensions()</a>, <a class="el" href="Menu_8h.html#a9019f0cf5a1fad0b5682a0aade2e929b">setMenuLayoutDimensions()</a>, et <a class="el" href="Menu_8h.html#ae391325329c9342aaee16a59e42f65f4">zoomLayout()</a>.</p>
+
+</div>
+</div>
+<a id="a48f76a8c0dc23567f303ed6aa221e078"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48f76a8c0dc23567f303ed6aa221e078">&#9670;&nbsp;</a></span>DEBUG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DEBUG = 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Window_8cpp.html#a96a68ee53ffcf494ca60f94ac05d94bb">draw()</a>, et <a class="el" href="Window_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>.</p>
+
+</div>
+</div>
+<a id="a7924ea74aab3505597ab4b3db868bafe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7924ea74aab3505597ab4b3db868bafe">&#9670;&nbsp;</a></span>GlobalLogger</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LoggerPtr GlobalLogger</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Common_8h.html#a7ac84f43f8294550afec605b53a6eee4">DestroySdkObjects()</a>, <a class="el" href="Menu_8h.html#aa13653318c21b0e6b86838e6091bfc9a">drawMenu()</a>, <a class="el" href="Device_8h.html#aa81c2dd8de485a2bc91c40e12263299a">freeDevice()</a>, <a class="el" href="Game_8h.html#a3f1f2de8ad16ee00d98289cf4270761f">freeGame()</a>, <a class="el" href="Menu_8h.html#ab761ec84f6452a32d7dbe17e7236a727">freeMenu()</a>, <a class="el" href="Mocap_8h.html#abe284ee34e36df76528f48d2dcf1515c">freeMocap()</a>, <a class="el" href="Window_8cpp.html#a46a5658306cbd9aa31bd35c564aa00e1">initLog4CXX()</a>, <a class="el" href="Menu_8h.html#a539fb5b0f1b763dc1cf8d6501160b2ce">initMenu()</a>, <a class="el" href="Device_8h.html#a22af2136da18ddd7d6cf06a32eda89f4">initNiteAndOpenNi()</a>, <a class="el" href="Window_8cpp.html#a0048a8f3dcbdcf6c5f2b8164a7026a5b">initOpenGL()</a>, <a class="el" href="Skybox_8h.html#a96b018fdff413c7b5c1bde3109fea644">initSkybox()</a>, <a class="el" href="SoundEffect_8h.html#aced36400d9e4cd642f77e1c5f9c42ac9">initSoundEffect()</a>, <a class="el" href="Window_8cpp.html#ad1a331659084ed2a357c1143658dc006">initWindow()</a>, <a class="el" href="Mocap_8cpp.html#a890e6e46f3fb19e074b3a7efec32c2be">isNextClicked()</a>, <a class="el" href="Mocap_8cpp.html#a438709ff4449dc468d0fd2a02b7896b4">isPreviousClicked()</a>, <a class="el" href="Window_8cpp.html#ab36adeaf63eed2490edca3408eac9c06">keydown()</a>, <a class="el" href="Window_8h.html#a0536355d9188bc1f1591f2cf42d0b87d">quit()</a>, <a class="el" href="Mocap_8h.html#a25d7ea23a2e9d7ad361ae7b9d56f6de1">readMembersName()</a>, et <a class="el" href="classSceneContext.html#ab775f8fbc44d107a8c1869ed21667b60">SceneContext::SceneContext()</a>.</p>
+
+</div>
+</div>
+<a id="a3daa5985cb85baab76287f95f11adf11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3daa5985cb85baab76287f95f11adf11">&#9670;&nbsp;</a></span>MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MODE = <a class="el" href="Window_8h.html#a4ddd570ad03298cdcf6728dcc3b82985">CALIBRATION</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Window_8h.html#a771cfbc1261b70be5e727700a78ac7cd">adaptTheLandmark()</a>, <a class="el" href="CalibrationMode_8h.html#a56fa49d56a7fe56269f3646c8de17c74">CalibrationMode()</a>, <a class="el" href="Window_8cpp.html#a96a68ee53ffcf494ca60f94ac05d94bb">draw()</a>, <a class="el" href="Menu_8h.html#aa13653318c21b0e6b86838e6091bfc9a">drawMenu()</a>, <a class="el" href="Mocap_8h.html#a8265dc2eb93655e9b289c61d3d5ab2cf">GetMembersCoordinates()</a>, <a class="el" href="Window_8cpp.html#ab36adeaf63eed2490edca3408eac9c06">keydown()</a>, <a class="el" href="Mocap_8cpp.html#a64598322ffd1fea52e969a6b0d5d2928">printFrameKinect()</a>, <a class="el" href="Mocap_8cpp.html#a7387b0a732dd0e6cddfa0edf847a59cf">testPoseExit()</a>, et <a class="el" href="Mocap_8h.html#a917d1117b31c893877cc84c57894d161">trackUser()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

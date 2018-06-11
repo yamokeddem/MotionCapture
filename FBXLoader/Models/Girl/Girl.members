@@ -1,0 +1,15 @@
+TETE                = Alexis:Head
+NUQUE		        = Alexis:Neck
+BRAS_DROIT	        = Alexis:RightArm
+BRAS_GAUCHE         = Alexis:LeftArm
+AVANT_BRAS_DROIT    = Alexis:RightForeArm
+AVANT_BRAS_GAUCHE   = Alexis:LeftForeArm
+MAIN_DROITE	        = Alexis:RightHand
+MAIN_GAUCHE	        = Alexis:LeftHand
+CUISSE_DROITE       = Alexis:RightUpLeg
+CUISSE_GAUCHE	    = Alexis:LeftUpLeg
+JAMBE_DROITE	    = Alexis:RightLeg
+JAMBE_GAUCHE	    = Alexis:LeftLeg
+PIED_DROITE         = Alexis:RightFoot
+PIED_GAUCHE	        = Alexis:LeftFoot
+COLONNE_VERTEBRALE  = Alexis:Spine

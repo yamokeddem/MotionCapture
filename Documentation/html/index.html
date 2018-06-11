@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MotionCaptureKinect: Projet LZW - Algorithmique - Documentation</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">MotionCaptureKinect
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.14 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','Recherche');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Projet LZW - Algorithmique - Documentation </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h1><a class="anchor" id="intro_sec"></a>
+Introduction</h1>
+<p>Bienvenue sur la documentation du programme Motion Capture Kinect.</p>
+<p>Ce programme a été réalisée par Nehari Mohamed, et Mokedemm Yanis dans le cadre d'un projet tuteuré de Master 1 Informatique à l'Université Paris 8, <br />
+</p>
+<h1><a class="anchor" id="fonctions"></a>
+Fonctionalitées du programme</h1>
+<p>Ce programme comporte plusieurs étapes :</p><ul>
+<li>Calibration : première étape du programme permettant à l'utilisateur d'être détécté et calibré par la caméra</li>
+<li>Menu principal : Menu offrant à l'utilisateur la possibilité de choisir entre les deux modes du programmes</li>
+<li>Motion Capture : Interface chargant plusieurs modèles 3D FBX. Les modèles reproduisent les mouvements de l'utilisateur dans un repère deux dimensions</li>
+<li>Jeux d'avion : Interface chargant un avion manipulable par les gestes de l'utilisateur. <br />
+<br />
+</li>
+</ul>
+<h1><a class="anchor" id="calibration"></a>
+Calibration</h1>
+<p>Il est nécéssaire pour la détéction de l'utilisateur par la caméra que celui-ci soit intégralement visible par la caméra de la tête au pied. Pour ce faire, placez-vous dans un endroit éspacé en essayant de ne pas inclure d'objet dans l'espace de détection, tels que des chaises, ou encore d'autres utilisateurs.</p>
+<p>Lors de l'étape de calibration, patientez devant la caméra en effectuant de léger déplacement et de légère rotation des bras afin que la caméra vous détècte. Une fois détécté, le corp de l'utilisateur se colorera en vert, et débutera alors l'étape de calibration du squelette. Patientez alors dans une position fixe en écartant légèrement les bras le long du corp, afin que les membres soit détéctés. Une fois tous les membres calibrés, déplacez votre main sur le bouton "Next" qui s'affichera en haut à droite de l'écran afin d'accéder au menu principal. <br />
+<br />
+</p>
+<h1><a class="anchor" id="menu"></a>
+Menu principal</h1>
+<p>Le menu principal offre la possibilité à l'utilisateur de choisir entre deux différents mode : La motion capture avec Avatar 3D, ou la manipulation d'un avion via les gestes de l'utilisateur Afin de choisir l'un des deux modes, déplacez vos deux mains sur un des boutons, et patientez durant le compte à rebours de 3 seconde <br />
+<br />
+</p>
+<h1><a class="anchor" id="motion"></a>
+Motion Capture</h1>
+<p>Le mode Avatar Motion Capture permet à l'utilisateur de voir ses mouvements reproduis par des modèle 3D sur un repère en deux dimensions. (Les mouvements en profondeur n'étant pas fonctionnel pour l'instant ils ne sont pas présentdans cette version du programme). <br />
+<br />
+</p>
+<h1><a class="anchor" id="jeux"></a>
+Airplane Game</h1>
+<p>Le mode airplane game permet à l'utilisateur de contrôler un avion avec ses bras en effectuant des rotations de droites à gauche. Afin de contrôle l'avion, placez votre corp dans une position verticale, puis levez les deux bras horizontalement. Enfin éfféctuez des mouvements de tous le buste de droite à gauche afin de faire pivoter l'avion. <br />
+<br />
+</p>
+<h1><a class="anchor" id="retour"></a>
+Retour à la page précédente</h1>
+<p>Afin de retourner au Menu principal, effectuez avec vos bras un mouvement en forme de X duarnt deux seconde. <br />
+<br />
+</p>
+<h1><a class="anchor" id="exit"></a>
+Quitter le programme</h1>
+<p>Afin de quitter le programme, retourner au menu principal, puis effectuez avec vos bras un mouvement en forme de X durant deux seconde. <br />
+<br />
+</p>
+<h1><a class="anchor" id="remerciement"></a>
+Remerciements</h1>
+<p>Nous tenons à remercier chaleureusement Monsieur Fares Belhadj pour ses précieux conseils durant ce semestre, qui nous ont permis d'avancer dans l'accomplissement de ce programme et dans la résolutions de certains de nos problèmes.</p>
+<p><br />
+<br />
+ </p>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

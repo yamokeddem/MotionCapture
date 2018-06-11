@@ -1,0 +1,1807 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MotionCaptureKinect: Référence du fichier src/Mocap.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">MotionCaptureKinect
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.14 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','Recherche');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Fonctions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier Mocap.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="Window_8h_source.html">Window.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Logger_8h_source.html">Logger.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Mocap_8h_source.html">Mocap.h</a>&quot;</code><br />
+<code>#include &lt;GL4D/gl4du.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="Device_8h_source.html">Device.h</a>&quot;</code><br />
+<code>#include &quot;GL4D/gl4dp.h&quot;</code><br />
+<code>#include &lt;SDL2/SDL_image.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="NiteSampleUtilities_8h_source.html">NiteSampleUtilities.h</a>&quot;</code><br />
+<code>#include &quot;string.h&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a311389c8b95a5c3bc192a04ee1590d09"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a311389c8b95a5c3bc192a04ee1590d09">NUMBER_TEXTURE</a>&#160;&#160;&#160;7</td></tr>
+<tr class="separator:a311389c8b95a5c3bc192a04ee1590d09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae24dc5f5bad79f3bdeaa412827cce662"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#ae24dc5f5bad79f3bdeaa412827cce662">TEXTURE_HAND</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:ae24dc5f5bad79f3bdeaa412827cce662"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea315a77a7192d8753c46aba1d4b1320"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#aea315a77a7192d8753c46aba1d4b1320">TEXTURE_ARROW</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:aea315a77a7192d8753c46aba1d4b1320"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20a51b5b0e8a5a7e9bfa8b59b097b3de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a20a51b5b0e8a5a7e9bfa8b59b097b3de">TEXTURE_BACKGROUND</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a20a51b5b0e8a5a7e9bfa8b59b097b3de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affab13c068bfe8f3f432e7a41130d0be"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#affab13c068bfe8f3f432e7a41130d0be">TEXTURE_SIZE</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:affab13c068bfe8f3f432e7a41130d0be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4e7bef7433f5f8df66b8dcc21b1ddef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#aa4e7bef7433f5f8df66b8dcc21b1ddef">MIN_NUM_CHUNKS</a>(data_size,  chunk_size)&#160;&#160;&#160;((((data_size)-1) / (chunk_size) + 1))</td></tr>
+<tr class="separator:aa4e7bef7433f5f8df66b8dcc21b1ddef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9789b6e66b4a625f9a8d6c14a4aff6d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a9789b6e66b4a625f9a8d6c14a4aff6d2">MIN_CHUNKS_SIZE</a>(data_size,  chunk_size)&#160;&#160;&#160;(<a class="el" href="Mocap_8cpp.html#aa4e7bef7433f5f8df66b8dcc21b1ddef">MIN_NUM_CHUNKS</a>(data_size, chunk_size) * (chunk_size))</td></tr>
+<tr class="separator:a9789b6e66b4a625f9a8d6c14a4aff6d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d411e8ad694b405595d955aadb6bb9c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a6d411e8ad694b405595d955aadb6bb9c">NUMBER_OF_LAYOUT</a>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:a6d411e8ad694b405595d955aadb6bb9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace63f13794c13aeb825d3e5c229a1f1b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#ace63f13794c13aeb825d3e5c229a1f1b">PICTURE_MAIN_DROITE</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:ace63f13794c13aeb825d3e5c229a1f1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c6b7917877be516490536df2dde14ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a8c6b7917877be516490536df2dde14ac">PICTURE_MAIN_GAUCHE</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a8c6b7917877be516490536df2dde14ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7b9c181e0e4d6c10e53ad6ed5eecfbd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#ab7b9c181e0e4d6c10e53ad6ed5eecfbd">PICTURE_FLECHE_NEXT</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:ab7b9c181e0e4d6c10e53ad6ed5eecfbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a442201f226bc8ba59e684ee4a6c4a29c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a442201f226bc8ba59e684ee4a6c4a29c">PICTURE_FLECHE_PREV</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a442201f226bc8ba59e684ee4a6c4a29c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:ab95593247cc8e132da211c3a64f957a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#ab95593247cc8e132da211c3a64f957a2">drawLineSkeleton</a> ()</td></tr>
+<tr class="separator:ab95593247cc8e132da211c3a64f957a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7387b0a732dd0e6cddfa0edf847a59cf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a7387b0a732dd0e6cddfa0edf847a59cf">testPoseExit</a> (nite::UserTrackerFrameRef *userTrackerFrame, const nite::UserData &amp;user)</td></tr>
+<tr class="memdesc:a7387b0a732dd0e6cddfa0edf847a59cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui analyse la position de l'utilisateur afin de détécter la position EXIT (croisement des bras en forme de X) et applique une action en focntion du MODE courant.  <a href="#a7387b0a732dd0e6cddfa0edf847a59cf">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7387b0a732dd0e6cddfa0edf847a59cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64598322ffd1fea52e969a6b0d5d2928"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a64598322ffd1fea52e969a6b0d5d2928">printFrameKinect</a> (nite::UserTrackerFrameRef *userTrackerFrame)</td></tr>
+<tr class="memdesc:a64598322ffd1fea52e969a6b0d5d2928"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui affiche les frames de la kinect en fonction du MODE définit :  <a href="#a64598322ffd1fea52e969a6b0d5d2928">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a64598322ffd1fea52e969a6b0d5d2928"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0464e2711327b4982f1868f25cdd3e83"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a0464e2711327b4982f1868f25cdd3e83">initAvatarMocap</a> ()</td></tr>
+<tr class="memdesc:a0464e2711327b4982f1868f25cdd3e83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui initialise les layouts et les FBX du mode de Motion Capture.  <a href="#a0464e2711327b4982f1868f25cdd3e83">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0464e2711327b4982f1868f25cdd3e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b7f22583147b8ecbd40b58f014aeb5b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a0b7f22583147b8ecbd40b58f014aeb5b">CreateContext</a> (const char *<a class="el" href="Game_8cpp.html#a7532e61a92ddd409176670f19e5d5ea1">file</a>)</td></tr>
+<tr class="memdesc:a0b7f22583147b8ecbd40b58f014aeb5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui initialise le FBX en lui créant un contexte indépendant.  <a href="#a0b7f22583147b8ecbd40b58f014aeb5b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0b7f22583147b8ecbd40b58f014aeb5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c471bec29122fd03997225028ad02c2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a6c471bec29122fd03997225028ad02c2">initTextures</a> ()</td></tr>
+<tr class="memdesc:a6c471bec29122fd03997225028ad02c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui charge les tectures (background, flèches ...)  <a href="#a6c471bec29122fd03997225028ad02c2">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a6c471bec29122fd03997225028ad02c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a340686b70496e31c0ed4320014bb82a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a340686b70496e31c0ed4320014bb82a0">copyMembersName</a> (char **dst, char *src)</td></tr>
+<tr class="memdesc:a340686b70496e31c0ed4320014bb82a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui copie le nom d'un membre.  <a href="#a340686b70496e31c0ed4320014bb82a0">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a340686b70496e31c0ed4320014bb82a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25d7ea23a2e9d7ad361ae7b9d56f6de1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a25d7ea23a2e9d7ad361ae7b9d56f6de1">readMembersName</a> (const char *filename)</td></tr>
+<tr class="memdesc:a25d7ea23a2e9d7ad361ae7b9d56f6de1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui lie et récupère les informations du fichier d'articulations des FBX (fichier servant à connaitre les noms des articulations du FBX)  <a href="#a25d7ea23a2e9d7ad361ae7b9d56f6de1">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a25d7ea23a2e9d7ad361ae7b9d56f6de1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a917d1117b31c893877cc84c57894d161"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a917d1117b31c893877cc84c57894d161">trackUser</a> ()</td></tr>
+<tr class="memdesc:a917d1117b31c893877cc84c57894d161"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui récupère les frames de la kinect, et track les utilisateurs. Une fois qu'un utilisateurs est trouvé, la fonction de detection du squelette et des membres est appelée.  <a href="#a917d1117b31c893877cc84c57894d161">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a917d1117b31c893877cc84c57894d161"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8265dc2eb93655e9b289c61d3d5ab2cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a8265dc2eb93655e9b289c61d3d5ab2cf">GetMembersCoordinates</a> (nite::UserTracker *pUserTracker, const nite::SkeletonJoint &amp;joint1, int color, <a class="el" href="classJointCoordinates.html">JointCoordinates</a> *member)</td></tr>
+<tr class="memdesc:a8265dc2eb93655e9b289c61d3d5ab2cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui récupère la position de chaque articulations et définit son degré de validité :  <a href="#a8265dc2eb93655e9b289c61d3d5ab2cf">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a8265dc2eb93655e9b289c61d3d5ab2cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d0b3d36722ee10e793a4930802a5d19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a4d0b3d36722ee10e793a4930802a5d19">DrawSkeleton</a> (nite::UserTracker *pUserTracker, const nite::UserData &amp;userData)</td></tr>
+<tr class="memdesc:a4d0b3d36722ee10e793a4930802a5d19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui récupère les coordonnées de chaque membres.  <a href="#a4d0b3d36722ee10e793a4930802a5d19">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4d0b3d36722ee10e793a4930802a5d19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dbad2718de835759c8355053663062a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a7dbad2718de835759c8355053663062a">isCalibrationReady</a> ()</td></tr>
+<tr class="memdesc:a7dbad2718de835759c8355053663062a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui retourne TRUE si tous les membres du squelettes ont bien été détécté (degré de validité &gt; 0.5) et False dansle cas contraire.  <a href="#a7dbad2718de835759c8355053663062a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7dbad2718de835759c8355053663062a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cfb018f99aac975f16b96dcc459bd9e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a4cfb018f99aac975f16b96dcc459bd9e">printArrows</a> ()</td></tr>
+<tr class="memdesc:a4cfb018f99aac975f16b96dcc459bd9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui affiche les deux flèches permettant de passer au FBX suivant ou précédent.  <a href="#a4cfb018f99aac975f16b96dcc459bd9e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4cfb018f99aac975f16b96dcc459bd9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a0bbf68afce0ff658a9c42487c7bd6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a9a0bbf68afce0ff658a9c42487c7bd6f">printHands</a> ()</td></tr>
+<tr class="memdesc:a9a0bbf68afce0ff658a9c42487c7bd6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui affiche les mains, permettant de cliquer sur les flèches.  <a href="#a9a0bbf68afce0ff658a9c42487c7bd6f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9a0bbf68afce0ff658a9c42487c7bd6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a890e6e46f3fb19e074b3a7efec32c2be"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a890e6e46f3fb19e074b3a7efec32c2be">isNextClicked</a> ()</td></tr>
+<tr class="memdesc:a890e6e46f3fb19e074b3a7efec32c2be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui analyse si la flèche permettant de passer au FBX suivant été cliquée ou non.  <a href="#a890e6e46f3fb19e074b3a7efec32c2be">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a890e6e46f3fb19e074b3a7efec32c2be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a438709ff4449dc468d0fd2a02b7896b4"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a438709ff4449dc468d0fd2a02b7896b4">isPreviousClicked</a> ()</td></tr>
+<tr class="memdesc:a438709ff4449dc468d0fd2a02b7896b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui analyse si la flèche permettant de passer au FBX précédent à été cliquée ou non.  <a href="#a438709ff4449dc468d0fd2a02b7896b4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a438709ff4449dc468d0fd2a02b7896b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8551ce7c8f0916fc2d9937393521d8eb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a8551ce7c8f0916fc2d9937393521d8eb">drawAvatar</a> ()</td></tr>
+<tr class="memdesc:a8551ce7c8f0916fc2d9937393521d8eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de dessiner le FBX.  <a href="#a8551ce7c8f0916fc2d9937393521d8eb">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a8551ce7c8f0916fc2d9937393521d8eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4046159c4db741eff35a955c5e6ac93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#ac4046159c4db741eff35a955c5e6ac93">calculateMembersAngle</a> ()</td></tr>
+<tr class="memdesc:ac4046159c4db741eff35a955c5e6ac93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui calcule l'angle de rotation de chaque membre en fonction de ses dépendances (La fonction de rotation des membres se trouve à l'emplacement /FBXLoader/DrawScene.cpp.  <a href="#ac4046159c4db741eff35a955c5e6ac93">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac4046159c4db741eff35a955c5e6ac93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbd5457c126570af763ea24dc41da830"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#acbd5457c126570af763ea24dc41da830">drawBackground</a> ()</td></tr>
+<tr class="memdesc:acbd5457c126570af763ea24dc41da830"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui dessine l'arrière plan pour chaque FBX.  <a href="#acbd5457c126570af763ea24dc41da830">Plus de détails...</a><br /></td></tr>
+<tr class="separator:acbd5457c126570af763ea24dc41da830"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a271af2d9baa3f6dafbf76206953e55b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a271af2d9baa3f6dafbf76206953e55b6">drawMocap</a> ()</td></tr>
+<tr class="memdesc:a271af2d9baa3f6dafbf76206953e55b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction d'affichage qui, dessine tous le contenu du mode MOTIONCAPTURE.  <a href="#a271af2d9baa3f6dafbf76206953e55b6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a271af2d9baa3f6dafbf76206953e55b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe284ee34e36df76528f48d2dcf1515c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#abe284ee34e36df76528f48d2dcf1515c">freeMocap</a> ()</td></tr>
+<tr class="memdesc:abe284ee34e36df76528f48d2dcf1515c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui libère la mémoire du mode MotionCapture.  <a href="#abe284ee34e36df76528f48d2dcf1515c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:abe284ee34e36df76528f48d2dcf1515c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a953e674724cd88c00910a52cd6cb0aa5"><td class="memItemLeft" align="right" valign="top">struct timespec startt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a953e674724cd88c00910a52cd6cb0aa5">stopp</a></td></tr>
+<tr class="separator:a953e674724cd88c00910a52cd6cb0aa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc26f25b5a2e76a9f1ec022137d8e7f2"><td class="memItemLeft" align="right" valign="top">static Uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#abc26f25b5a2e76a9f1ec022137d8e7f2">_cur_color</a> = 0xFF0000FF</td></tr>
+<tr class="separator:abc26f25b5a2e76a9f1ec022137d8e7f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4995a9e3216497167fcd8220bced2bee"><td class="memItemLeft" align="right" valign="top">openni::RGB888Pixel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a4995a9e3216497167fcd8220bced2bee">m_pTexMap</a></td></tr>
+<tr class="separator:a4995a9e3216497167fcd8220bced2bee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a4fe1d46f2a5f3403b928580da09433"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a5a4fe1d46f2a5f3403b928580da09433">m_nTexMapX</a></td></tr>
+<tr class="separator:a5a4fe1d46f2a5f3403b928580da09433"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0fe316128a3775b38f940d1046d188f"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#af0fe316128a3775b38f940d1046d188f">m_nTexMapY</a></td></tr>
+<tr class="separator:af0fe316128a3775b38f940d1046d188f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53a5320c369234d2316f843b3b8d6da0"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a53a5320c369234d2316f843b3b8d6da0">g_poseTimeoutToExit</a> = 2000</td></tr>
+<tr class="separator:a53a5320c369234d2316f843b3b8d6da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52aa6db25863687fab1f0b61b7707ef5"><td class="memItemLeft" align="right" valign="top">nite::UserTracker *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a52aa6db25863687fab1f0b61b7707ef5">m_pUserTracker</a></td></tr>
+<tr class="separator:a52aa6db25863687fab1f0b61b7707ef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adad2559a7bcc40bf82a81c377d7082b9"><td class="memItemLeft" align="right" valign="top">nite::UserId&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#adad2559a7bcc40bf82a81c377d7082b9">m_poseUser</a></td></tr>
+<tr class="separator:adad2559a7bcc40bf82a81c377d7082b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae438b9a392def1d766e087596b5ba28"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#aae438b9a392def1d766e087596b5ba28">m_poseTime</a></td></tr>
+<tr class="separator:aae438b9a392def1d766e087596b5ba28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a959e450dbb3fe1fb1992af08889da4"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a6a959e450dbb3fe1fb1992af08889da4">_frameKinect</a> = 0</td></tr>
+<tr class="separator:a6a959e450dbb3fe1fb1992af08889da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31618c3630a396dac51639128efcd207"><td class="memItemLeft" align="right" valign="top">openni::VideoFrameRef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a31618c3630a396dac51639128efcd207">depthFrame</a></td></tr>
+<tr class="separator:a31618c3630a396dac51639128efcd207"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaed9648c316ffe7059c8f4b5f6afc601"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#aaed9648c316ffe7059c8f4b5f6afc601">printBackground</a> = true</td></tr>
+<tr class="separator:aaed9648c316ffe7059c8f4b5f6afc601"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbbe62b6ec607f44a7046897d0af5265"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#acbbe62b6ec607f44a7046897d0af5265">currentAvatar</a> = 0</td></tr>
+<tr class="separator:acbbe62b6ec607f44a7046897d0af5265"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4d0466001de274d21da52c1319d8fc2"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#af4d0466001de274d21da52c1319d8fc2">FBXPath</a> []</td></tr>
+<tr class="separator:af4d0466001de274d21da52c1319d8fc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab70a074e12d6223c141832a779e9ade"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#aab70a074e12d6223c141832a779e9ade">FBXNameMembers</a> []</td></tr>
+<tr class="separator:aab70a074e12d6223c141832a779e9ade"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c25fc415c3d497a62a45b2d8d93a484"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a1c25fc415c3d497a62a45b2d8d93a484">g_nXRes</a> = 0</td></tr>
+<tr class="separator:a1c25fc415c3d497a62a45b2d8d93a484"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3f2b94be6548dc5a21777b68d8a411d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#af3f2b94be6548dc5a21777b68d8a411d">g_nYRes</a> = 0</td></tr>
+<tr class="separator:af3f2b94be6548dc5a21777b68d8a411d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4acb4ed2b829cd85d3e6a22f4c2e65a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#aa4acb4ed2b829cd85d3e6a22f4c2e65a">m_pDepthHist</a> [10000]</td></tr>
+<tr class="separator:aa4acb4ed2b829cd85d3e6a22f4c2e65a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad41694d83159a87401c04ee31ad4637c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#ad41694d83159a87401c04ee31ad4637c">Colorss</a> [][3] = {{1, 0, 0}, {0, 1, 0}, {0, 0, 1}, {1, 1, 1}}</td></tr>
+<tr class="separator:ad41694d83159a87401c04ee31ad4637c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9d6226487f3cecf4192b3f2c47b78fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#aa9d6226487f3cecf4192b3f2c47b78fe">colorCountt</a> = 3</td></tr>
+<tr class="separator:aa9d6226487f3cecf4192b3f2c47b78fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06703f9f226d067f088616eb68003922"><td class="memItemLeft" align="right" valign="top">static GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a06703f9f226d067f088616eb68003922">_texturesId</a> [<a class="el" href="Mocap_8cpp.html#a311389c8b95a5c3bc192a04ee1590d09">NUMBER_TEXTURE</a>]</td></tr>
+<tr class="separator:a06703f9f226d067f088616eb68003922"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fa4448c53ff144d5a29df7fe7805c2a"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a4fa4448c53ff144d5a29df7fe7805c2a">_background</a> = 0</td></tr>
+<tr class="separator:a4fa4448c53ff144d5a29df7fe7805c2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23e9e0ca23f9682028a1f4f6fcddb477"><td class="memItemLeft" align="right" valign="top">static GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a23e9e0ca23f9682028a1f4f6fcddb477">_sphere</a> = 0</td></tr>
+<tr class="separator:a23e9e0ca23f9682028a1f4f6fcddb477"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7285e846b2e871fac5a9c7b606d3f37b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSceneContext.html">SceneContext</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a7285e846b2e871fac5a9c7b606d3f37b">gSceneContext</a> = NULL</td></tr>
+<tr class="separator:a7285e846b2e871fac5a9c7b606d3f37b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3bff517a690c39f04a430027d477cf2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Window_8h.html#a3c290a2c8b02498d579e18dff800a433">pLayout</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#aa3bff517a690c39f04a430027d477cf2">_layout</a> [4]</td></tr>
+<tr class="separator:aa3bff517a690c39f04a430027d477cf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac6db334e2a38b71f7a1c456ffdd816d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJointCoordinates.html">JointCoordinates</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#aac6db334e2a38b71f7a1c456ffdd816d">TETE</a> = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td></tr>
+<tr class="separator:aac6db334e2a38b71f7a1c456ffdd816d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e37bf37a1f00646e64357c96aaf2579"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJointCoordinates.html">JointCoordinates</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a0e37bf37a1f00646e64357c96aaf2579">NUQUE</a> = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td></tr>
+<tr class="separator:a0e37bf37a1f00646e64357c96aaf2579"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48913ec72b13960cafd3d09d544abe81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJointCoordinates.html">JointCoordinates</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a48913ec72b13960cafd3d09d544abe81">EPAULE_DROITE</a> = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td></tr>
+<tr class="separator:a48913ec72b13960cafd3d09d544abe81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad92d9cd23100462e870e649359a210f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJointCoordinates.html">JointCoordinates</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#ad92d9cd23100462e870e649359a210f3">EPAULE_GAUCHE</a> = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td></tr>
+<tr class="separator:ad92d9cd23100462e870e649359a210f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a311cff12601e9c5e00aef9d0166c78f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJointCoordinates.html">JointCoordinates</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a311cff12601e9c5e00aef9d0166c78f0">COUDE_GAUCHE</a> = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td></tr>
+<tr class="separator:a311cff12601e9c5e00aef9d0166c78f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2088b2e81f996913343eade332f3dd23"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJointCoordinates.html">JointCoordinates</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a2088b2e81f996913343eade332f3dd23">COUDE_DROIT</a> = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td></tr>
+<tr class="separator:a2088b2e81f996913343eade332f3dd23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea9c12696be083192af116082ff4b1bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJointCoordinates.html">JointCoordinates</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#aea9c12696be083192af116082ff4b1bd">MAIN_GAUCHE</a> = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td></tr>
+<tr class="separator:aea9c12696be083192af116082ff4b1bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ef3e9f894d04e54eefe482959768049"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJointCoordinates.html">JointCoordinates</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a6ef3e9f894d04e54eefe482959768049">MAIN_DROITE</a> = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td></tr>
+<tr class="separator:a6ef3e9f894d04e54eefe482959768049"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27e9ed753e897e86c9858169d67bb582"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJointCoordinates.html">JointCoordinates</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a27e9ed753e897e86c9858169d67bb582">TORSE</a> = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td></tr>
+<tr class="separator:a27e9ed753e897e86c9858169d67bb582"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace861295a0abb69f07791c2b28d7942e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJointCoordinates.html">JointCoordinates</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#ace861295a0abb69f07791c2b28d7942e">HANCHE_GAUCHE</a> = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td></tr>
+<tr class="separator:ace861295a0abb69f07791c2b28d7942e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b46ec6645ef0166c4d8863ef2b7362d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJointCoordinates.html">JointCoordinates</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a0b46ec6645ef0166c4d8863ef2b7362d">HANCHE_DROITE</a> = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td></tr>
+<tr class="separator:a0b46ec6645ef0166c4d8863ef2b7362d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa64100440ba9967f748473652756dc76"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJointCoordinates.html">JointCoordinates</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#aa64100440ba9967f748473652756dc76">GENOU_DROIT</a> = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td></tr>
+<tr class="separator:aa64100440ba9967f748473652756dc76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae99c2240e75f8b609785b866d549ae75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJointCoordinates.html">JointCoordinates</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#ae99c2240e75f8b609785b866d549ae75">GENOU_GAUCHE</a> = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td></tr>
+<tr class="separator:ae99c2240e75f8b609785b866d549ae75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99387032fcc5e487d6fd7e5de3aab7bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJointCoordinates.html">JointCoordinates</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a99387032fcc5e487d6fd7e5de3aab7bc">PIED_DROIT</a> = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td></tr>
+<tr class="separator:a99387032fcc5e487d6fd7e5de3aab7bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac365075f5c2ecb77d88e1f84b19aae5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJointCoordinates.html">JointCoordinates</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#ac365075f5c2ecb77d88e1f84b19aae5b">PIED_GAUCHE</a> = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td></tr>
+<tr class="separator:ac365075f5c2ecb77d88e1f84b19aae5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3390585650091a51e876f18f1e12996"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJointCoordinates.html">JointCoordinates</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#ac3390585650091a51e876f18f1e12996">BASE_COLONNE_V</a> = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td></tr>
+<tr class="separator:ac3390585650091a51e876f18f1e12996"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a201ef1e8c97e5f612008fd65bfcd3f33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJointCoordinates.html">JointCoordinates</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a201ef1e8c97e5f612008fd65bfcd3f33">tempGenouGauche</a> = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td></tr>
+<tr class="separator:a201ef1e8c97e5f612008fd65bfcd3f33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab162012753a4e53ec742fd3481c27340"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJointCoordinates.html">JointCoordinates</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#ab162012753a4e53ec742fd3481c27340">tempGenouDroit</a> = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td></tr>
+<tr class="separator:ab162012753a4e53ec742fd3481c27340"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b905c8775bf14dc4f4560fee4e0d4e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classJointCoordinates.html">JointCoordinates</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a5b905c8775bf14dc4f4560fee4e0d4e4">tempNuque</a> = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td></tr>
+<tr class="separator:a5b905c8775bf14dc4f4560fee4e0d4e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a277955e34b7de0cf5307f15036a5a293"><td class="memItemLeft" align="right" valign="top">static struct timespec start&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mocap_8cpp.html#a277955e34b7de0cf5307f15036a5a293">stop</a></td></tr>
+<tr class="separator:a277955e34b7de0cf5307f15036a5a293"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des macros</h2>
+<a id="a9789b6e66b4a625f9a8d6c14a4aff6d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9789b6e66b4a625f9a8d6c14a4aff6d2">&#9670;&nbsp;</a></span>MIN_CHUNKS_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MIN_CHUNKS_SIZE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">data_size, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">chunk_size&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(<a class="el" href="Mocap_8cpp.html#aa4e7bef7433f5f8df66b8dcc21b1ddef">MIN_NUM_CHUNKS</a>(data_size, chunk_size) * (chunk_size))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8cpp.html#a64598322ffd1fea52e969a6b0d5d2928">printFrameKinect()</a>.</p>
+
+</div>
+</div>
+<a id="aa4e7bef7433f5f8df66b8dcc21b1ddef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4e7bef7433f5f8df66b8dcc21b1ddef">&#9670;&nbsp;</a></span>MIN_NUM_CHUNKS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MIN_NUM_CHUNKS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">data_size, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">chunk_size&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((((data_size)-1) / (chunk_size) + 1))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6d411e8ad694b405595d955aadb6bb9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d411e8ad694b405595d955aadb6bb9c">&#9670;&nbsp;</a></span>NUMBER_OF_LAYOUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NUMBER_OF_LAYOUT&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#abe284ee34e36df76528f48d2dcf1515c">freeMocap()</a>, et <a class="el" href="Mocap_8h.html#a0464e2711327b4982f1868f25cdd3e83">initAvatarMocap()</a>.</p>
+
+</div>
+</div>
+<a id="a311389c8b95a5c3bc192a04ee1590d09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a311389c8b95a5c3bc192a04ee1590d09">&#9670;&nbsp;</a></span>NUMBER_TEXTURE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NUMBER_TEXTURE&#160;&#160;&#160;7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8cpp.html#a6c471bec29122fd03997225028ad02c2">initTextures()</a>.</p>
+
+</div>
+</div>
+<a id="ab7b9c181e0e4d6c10e53ad6ed5eecfbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7b9c181e0e4d6c10e53ad6ed5eecfbd">&#9670;&nbsp;</a></span>PICTURE_FLECHE_NEXT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PICTURE_FLECHE_NEXT&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a0464e2711327b4982f1868f25cdd3e83">initAvatarMocap()</a>, <a class="el" href="Mocap_8cpp.html#a890e6e46f3fb19e074b3a7efec32c2be">isNextClicked()</a>, et <a class="el" href="Mocap_8cpp.html#a4cfb018f99aac975f16b96dcc459bd9e">printArrows()</a>.</p>
+
+</div>
+</div>
+<a id="a442201f226bc8ba59e684ee4a6c4a29c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a442201f226bc8ba59e684ee4a6c4a29c">&#9670;&nbsp;</a></span>PICTURE_FLECHE_PREV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PICTURE_FLECHE_PREV&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a0464e2711327b4982f1868f25cdd3e83">initAvatarMocap()</a>, <a class="el" href="Mocap_8cpp.html#a438709ff4449dc468d0fd2a02b7896b4">isPreviousClicked()</a>, et <a class="el" href="Mocap_8cpp.html#a4cfb018f99aac975f16b96dcc459bd9e">printArrows()</a>.</p>
+
+</div>
+</div>
+<a id="ace63f13794c13aeb825d3e5c229a1f1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace63f13794c13aeb825d3e5c229a1f1b">&#9670;&nbsp;</a></span>PICTURE_MAIN_DROITE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PICTURE_MAIN_DROITE&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a0464e2711327b4982f1868f25cdd3e83">initAvatarMocap()</a>, et <a class="el" href="Mocap_8h.html#a9a0bbf68afce0ff658a9c42487c7bd6f">printHands()</a>.</p>
+
+</div>
+</div>
+<a id="a8c6b7917877be516490536df2dde14ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c6b7917877be516490536df2dde14ac">&#9670;&nbsp;</a></span>PICTURE_MAIN_GAUCHE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PICTURE_MAIN_GAUCHE&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a0464e2711327b4982f1868f25cdd3e83">initAvatarMocap()</a>, et <a class="el" href="Mocap_8h.html#a9a0bbf68afce0ff658a9c42487c7bd6f">printHands()</a>.</p>
+
+</div>
+</div>
+<a id="aea315a77a7192d8753c46aba1d4b1320"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea315a77a7192d8753c46aba1d4b1320">&#9670;&nbsp;</a></span>TEXTURE_ARROW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TEXTURE_ARROW&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8cpp.html#a4cfb018f99aac975f16b96dcc459bd9e">printArrows()</a>.</p>
+
+</div>
+</div>
+<a id="a20a51b5b0e8a5a7e9bfa8b59b097b3de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20a51b5b0e8a5a7e9bfa8b59b097b3de">&#9670;&nbsp;</a></span>TEXTURE_BACKGROUND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TEXTURE_BACKGROUND&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae24dc5f5bad79f3bdeaa412827cce662"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae24dc5f5bad79f3bdeaa412827cce662">&#9670;&nbsp;</a></span>TEXTURE_HAND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TEXTURE_HAND&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a9a0bbf68afce0ff658a9c42487c7bd6f">printHands()</a>.</p>
+
+</div>
+</div>
+<a id="affab13c068bfe8f3f432e7a41130d0be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affab13c068bfe8f3f432e7a41130d0be">&#9670;&nbsp;</a></span>TEXTURE_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TEXTURE_SIZE&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8cpp.html#a64598322ffd1fea52e969a6b0d5d2928">printFrameKinect()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="ac4046159c4db741eff35a955c5e6ac93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4046159c4db741eff35a955c5e6ac93">&#9670;&nbsp;</a></span>calculateMembersAngle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void calculateMembersAngle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui calcule l'angle de rotation de chaque membre en fonction de ses dépendances (La fonction de rotation des membres se trouve à l'emplacement /FBXLoader/DrawScene.cpp. </p>
+
+<p class="reference">Références <a class="el" href="classJointCoordinates.html#ac6e22635e41eefda0ed338309319f10b">JointCoordinates::available</a>, <a class="el" href="Mocap_8cpp.html#ac3390585650091a51e876f18f1e12996">BASE_COLONNE_V</a>, <a class="el" href="classJointCoordinates.html#a3a927f888c33fc4e72d331deeee4885f">JointCoordinates::calculateAngle()</a>, <a class="el" href="Mocap_8cpp.html#a2088b2e81f996913343eade332f3dd23">COUDE_DROIT</a>, <a class="el" href="Mocap_8cpp.html#a311cff12601e9c5e00aef9d0166c78f0">COUDE_GAUCHE</a>, <a class="el" href="Mocap_8cpp.html#a48913ec72b13960cafd3d09d544abe81">EPAULE_DROITE</a>, <a class="el" href="Mocap_8cpp.html#ad92d9cd23100462e870e649359a210f3">EPAULE_GAUCHE</a>, <a class="el" href="Mocap_8cpp.html#aa64100440ba9967f748473652756dc76">GENOU_DROIT</a>, <a class="el" href="Mocap_8cpp.html#ae99c2240e75f8b609785b866d549ae75">GENOU_GAUCHE</a>, <a class="el" href="Mocap_8cpp.html#a0b46ec6645ef0166c4d8863ef2b7362d">HANCHE_DROITE</a>, <a class="el" href="Mocap_8cpp.html#ace861295a0abb69f07791c2b28d7942e">HANCHE_GAUCHE</a>, <a class="el" href="classJointCoordinates.html#a26ea9dfbda1d692b972e7c7500c0486a">JointCoordinates::isAvailable()</a>, <a class="el" href="Mocap_8cpp.html#a6ef3e9f894d04e54eefe482959768049">MAIN_DROITE</a>, <a class="el" href="Mocap_8cpp.html#aea9c12696be083192af116082ff4b1bd">MAIN_GAUCHE</a>, <a class="el" href="Mocap_8cpp.html#a0e37bf37a1f00646e64357c96aaf2579">NUQUE</a>, <a class="el" href="Mocap_8cpp.html#a99387032fcc5e487d6fd7e5de3aab7bc">PIED_DROIT</a>, <a class="el" href="Mocap_8cpp.html#ac365075f5c2ecb77d88e1f84b19aae5b">PIED_GAUCHE</a>, <a class="el" href="Mocap_8cpp.html#ab162012753a4e53ec742fd3481c27340">tempGenouDroit</a>, <a class="el" href="Mocap_8cpp.html#a201ef1e8c97e5f612008fd65bfcd3f33">tempGenouGauche</a>, <a class="el" href="Mocap_8cpp.html#a5b905c8775bf14dc4f4560fee4e0d4e4">tempNuque</a>, <a class="el" href="classJointCoordinates.html#a09da9ca56ed6939e794d8cd7570e03c9">JointCoordinates::x</a>, et <a class="el" href="classJointCoordinates.html#a85353b819653a764314bd0ba2db2e63f">JointCoordinates::y</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Window_8cpp.html#a96a68ee53ffcf494ca60f94ac05d94bb">draw()</a>.</p>
+
+</div>
+</div>
+<a id="a340686b70496e31c0ed4320014bb82a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a340686b70496e31c0ed4320014bb82a0">&#9670;&nbsp;</a></span>copyMembersName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void copyMembersName </td>
+          <td>(</td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>dst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>src</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui copie le nom d'un membre. </p>
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a25d7ea23a2e9d7ad361ae7b9d56f6de1">readMembersName()</a>.</p>
+
+</div>
+</div>
+<a id="a0b7f22583147b8ecbd40b58f014aeb5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b7f22583147b8ecbd40b58f014aeb5b">&#9670;&nbsp;</a></span>CreateContext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CreateContext </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui initialise le FBX en lui créant un contexte indépendant. </p>
+
+<p class="reference">Références <a class="el" href="Game_8cpp.html#a7532e61a92ddd409176670f19e5d5ea1">file</a>, et <a class="el" href="Mocap_8cpp.html#a7285e846b2e871fac5a9c7b606d3f37b">gSceneContext</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a271af2d9baa3f6dafbf76206953e55b6">drawMocap()</a>, <a class="el" href="Mocap_8h.html#a0464e2711327b4982f1868f25cdd3e83">initAvatarMocap()</a>, et <a class="el" href="Window_8cpp.html#ab36adeaf63eed2490edca3408eac9c06">keydown()</a>.</p>
+
+</div>
+</div>
+<a id="a8551ce7c8f0916fc2d9937393521d8eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8551ce7c8f0916fc2d9937393521d8eb">&#9670;&nbsp;</a></span>drawAvatar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void drawAvatar </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction qui permet de dessiner le FBX. </p>
+
+<p class="reference">Références <a class="el" href="Window_8cpp.html#ae3581acec97a4372cbca598533b80dc6">_pIdFBX</a>, <a class="el" href="Window_8cpp.html#a5b25a069d46e2c8963f7a855f6a3582c">_windowHeight</a>, <a class="el" href="Window_8cpp.html#ac3fccedccc56d04d622b5745485a7568">_windowWidth</a>, <a class="el" href="classSceneContext.html#af33ba9000594fd8bce536c99bb4aae4e">SceneContext::GetStatus()</a>, <a class="el" href="Mocap_8cpp.html#a7285e846b2e871fac5a9c7b606d3f37b">gSceneContext</a>, <a class="el" href="classSceneContext.html#ae0e2269a6a0df27ec32114282c52f812">SceneContext::LoadFile()</a>, <a class="el" href="Game_8cpp.html#a328d66dadd9912ad479672699043bb53">lumpos</a>, <a class="el" href="classSceneContext.html#ad0fdb258c51900e90cc206ecdff267d1a6c9b140d16fc1e09aada9314899fe402">SceneContext::MUST_BE_LOADED</a>, et <a class="el" href="classSceneContext.html#a757f3c7f7824e77bbce4a3baf9490ac6">SceneContext::OnDisplay()</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a271af2d9baa3f6dafbf76206953e55b6">drawMocap()</a>.</p>
+
+</div>
+</div>
+<a id="acbd5457c126570af763ea24dc41da830"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbd5457c126570af763ea24dc41da830">&#9670;&nbsp;</a></span>drawBackground()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawBackground </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui dessine l'arrière plan pour chaque FBX. </p>
+
+<p class="reference">Références <a class="el" href="Mocap_8cpp.html#a4fa4448c53ff144d5a29df7fe7805c2a">_background</a>, <a class="el" href="Mocap_8cpp.html#a06703f9f226d067f088616eb68003922">_texturesId</a>, <a class="el" href="Window_8cpp.html#a5b25a069d46e2c8963f7a855f6a3582c">_windowHeight</a>, <a class="el" href="Window_8cpp.html#ac3fccedccc56d04d622b5745485a7568">_windowWidth</a>, <a class="el" href="Mocap_8cpp.html#acbbe62b6ec607f44a7046897d0af5265">currentAvatar</a>, et <a class="el" href="Mocap_8h.html#ac9093ab01f3bdd07c6f721e33b88afc7">NUMBER_FBX</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a271af2d9baa3f6dafbf76206953e55b6">drawMocap()</a>.</p>
+
+</div>
+</div>
+<a id="ab95593247cc8e132da211c3a64f957a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab95593247cc8e132da211c3a64f957a2">&#9670;&nbsp;</a></span>drawLineSkeleton()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawLineSkeleton </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a271af2d9baa3f6dafbf76206953e55b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a271af2d9baa3f6dafbf76206953e55b6">&#9670;&nbsp;</a></span>drawMocap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawMocap </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction d'affichage qui, dessine tous le contenu du mode MOTIONCAPTURE. </p>
+
+<p class="reference">Références <a class="el" href="Mocap_8cpp.html#a0b7f22583147b8ecbd40b58f014aeb5b">CreateContext()</a>, <a class="el" href="Mocap_8cpp.html#acbbe62b6ec607f44a7046897d0af5265">currentAvatar</a>, <a class="el" href="Mocap_8cpp.html#a8551ce7c8f0916fc2d9937393521d8eb">drawAvatar()</a>, <a class="el" href="Mocap_8cpp.html#acbd5457c126570af763ea24dc41da830">drawBackground()</a>, <a class="el" href="Mocap_8cpp.html#aab70a074e12d6223c141832a779e9ade">FBXNameMembers</a>, <a class="el" href="Mocap_8cpp.html#af4d0466001de274d21da52c1319d8fc2">FBXPath</a>, <a class="el" href="Mocap_8cpp.html#a7285e846b2e871fac5a9c7b606d3f37b">gSceneContext</a>, <a class="el" href="Mocap_8cpp.html#a890e6e46f3fb19e074b3a7efec32c2be">isNextClicked()</a>, <a class="el" href="Mocap_8cpp.html#a438709ff4449dc468d0fd2a02b7896b4">isPreviousClicked()</a>, <a class="el" href="Mocap_8h.html#ac9093ab01f3bdd07c6f721e33b88afc7">NUMBER_FBX</a>, <a class="el" href="Mocap_8cpp.html#a4cfb018f99aac975f16b96dcc459bd9e">printArrows()</a>, <a class="el" href="Mocap_8cpp.html#a9a0bbf68afce0ff658a9c42487c7bd6f">printHands()</a>, et <a class="el" href="Mocap_8cpp.html#a25d7ea23a2e9d7ad361ae7b9d56f6de1">readMembersName()</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Window_8cpp.html#a96a68ee53ffcf494ca60f94ac05d94bb">draw()</a>.</p>
+
+</div>
+</div>
+<a id="a4d0b3d36722ee10e793a4930802a5d19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d0b3d36722ee10e793a4930802a5d19">&#9670;&nbsp;</a></span>DrawSkeleton()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DrawSkeleton </td>
+          <td>(</td>
+          <td class="paramtype">nite::UserTracker *&#160;</td>
+          <td class="paramname"><em>pUserTracker</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const nite::UserData &amp;&#160;</td>
+          <td class="paramname"><em>userData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui récupère les coordonnées de chaque membres. </p>
+
+<p class="reference">Références <a class="el" href="Mocap_8cpp.html#aa9d6226487f3cecf4192b3f2c47b78fe">colorCountt</a>, <a class="el" href="Mocap_8cpp.html#a2088b2e81f996913343eade332f3dd23">COUDE_DROIT</a>, <a class="el" href="Mocap_8cpp.html#a311cff12601e9c5e00aef9d0166c78f0">COUDE_GAUCHE</a>, <a class="el" href="Mocap_8cpp.html#a48913ec72b13960cafd3d09d544abe81">EPAULE_DROITE</a>, <a class="el" href="Mocap_8cpp.html#ad92d9cd23100462e870e649359a210f3">EPAULE_GAUCHE</a>, <a class="el" href="Mocap_8cpp.html#aa64100440ba9967f748473652756dc76">GENOU_DROIT</a>, <a class="el" href="Mocap_8cpp.html#ae99c2240e75f8b609785b866d549ae75">GENOU_GAUCHE</a>, <a class="el" href="Mocap_8cpp.html#a8265dc2eb93655e9b289c61d3d5ab2cf">GetMembersCoordinates()</a>, <a class="el" href="Mocap_8cpp.html#a0b46ec6645ef0166c4d8863ef2b7362d">HANCHE_DROITE</a>, <a class="el" href="Mocap_8cpp.html#ace861295a0abb69f07791c2b28d7942e">HANCHE_GAUCHE</a>, <a class="el" href="NiteEnums_8h.html#af92f943e3dc4a7d1fb537fa481094fa9a1ce5da4bc6ea2341c14c1d3bf5bbe7ad">JOINT_HEAD</a>, <a class="el" href="NiteEnums_8h.html#af92f943e3dc4a7d1fb537fa481094fa9a6ac4e892014718ca5570b8992c8fa36f">JOINT_LEFT_ELBOW</a>, <a class="el" href="NiteEnums_8h.html#af92f943e3dc4a7d1fb537fa481094fa9aa4e8b9634712913435afe805ecf2a125">JOINT_LEFT_FOOT</a>, <a class="el" href="NiteEnums_8h.html#af92f943e3dc4a7d1fb537fa481094fa9a1e735135c1d34ca1ed88f2b5b9611beb">JOINT_LEFT_HAND</a>, <a class="el" href="NiteEnums_8h.html#af92f943e3dc4a7d1fb537fa481094fa9a22e3f6078e6f26d42be73dd49312cb71">JOINT_LEFT_HIP</a>, <a class="el" href="NiteEnums_8h.html#af92f943e3dc4a7d1fb537fa481094fa9af3ae71393f3af1ee1b4bb2c1af7dddee">JOINT_LEFT_KNEE</a>, <a class="el" href="NiteEnums_8h.html#af92f943e3dc4a7d1fb537fa481094fa9a61da172be258b5c651088c718553ad56">JOINT_LEFT_SHOULDER</a>, <a class="el" href="NiteEnums_8h.html#af92f943e3dc4a7d1fb537fa481094fa9aea50ffaf40cb81410c66a2fc7d4ed69e">JOINT_NECK</a>, <a class="el" href="NiteEnums_8h.html#af92f943e3dc4a7d1fb537fa481094fa9ab1582fdca1a9bfe33ad4729b497c896a">JOINT_RIGHT_ELBOW</a>, <a class="el" href="NiteEnums_8h.html#af92f943e3dc4a7d1fb537fa481094fa9ae7f256a4f37158efcc7fa6c96a0965ae">JOINT_RIGHT_FOOT</a>, <a class="el" href="NiteEnums_8h.html#af92f943e3dc4a7d1fb537fa481094fa9a6d6d939012248ff4af7c9a2d9963ae13">JOINT_RIGHT_HAND</a>, <a class="el" href="NiteEnums_8h.html#af92f943e3dc4a7d1fb537fa481094fa9a1eb25fbc50e706366a7614291c5b6700">JOINT_RIGHT_HIP</a>, <a class="el" href="NiteEnums_8h.html#af92f943e3dc4a7d1fb537fa481094fa9aed14eec26adb1705866c5e2aab7fe6db">JOINT_RIGHT_KNEE</a>, <a class="el" href="NiteEnums_8h.html#af92f943e3dc4a7d1fb537fa481094fa9a753d97029b8a7dc3eb33c7cbe65d5055">JOINT_RIGHT_SHOULDER</a>, <a class="el" href="NiteEnums_8h.html#af92f943e3dc4a7d1fb537fa481094fa9abc8abde6c200cd99e62eb225df5e9986">JOINT_TORSO</a>, <a class="el" href="Mocap_8cpp.html#a6ef3e9f894d04e54eefe482959768049">MAIN_DROITE</a>, <a class="el" href="Mocap_8cpp.html#aea9c12696be083192af116082ff4b1bd">MAIN_GAUCHE</a>, <a class="el" href="Mocap_8cpp.html#a0e37bf37a1f00646e64357c96aaf2579">NUQUE</a>, <a class="el" href="Mocap_8cpp.html#a99387032fcc5e487d6fd7e5de3aab7bc">PIED_DROIT</a>, <a class="el" href="Mocap_8cpp.html#ac365075f5c2ecb77d88e1f84b19aae5b">PIED_GAUCHE</a>, <a class="el" href="Mocap_8cpp.html#aac6db334e2a38b71f7a1c456ffdd816d">TETE</a>, et <a class="el" href="Mocap_8cpp.html#a27e9ed753e897e86c9858169d67bb582">TORSE</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a917d1117b31c893877cc84c57894d161">trackUser()</a>.</p>
+
+</div>
+</div>
+<a id="abe284ee34e36df76528f48d2dcf1515c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe284ee34e36df76528f48d2dcf1515c">&#9670;&nbsp;</a></span>freeMocap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void freeMocap </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui libère la mémoire du mode MotionCapture. </p>
+
+<p class="reference">Références <a class="el" href="Mocap_8cpp.html#aa3bff517a690c39f04a430027d477cf2">_layout</a>, <a class="el" href="Mocap_8cpp.html#a06703f9f226d067f088616eb68003922">_texturesId</a>, <a class="el" href="Mocap_8cpp.html#a2088b2e81f996913343eade332f3dd23">COUDE_DROIT</a>, <a class="el" href="Mocap_8cpp.html#a311cff12601e9c5e00aef9d0166c78f0">COUDE_GAUCHE</a>, <a class="el" href="Mocap_8cpp.html#a48913ec72b13960cafd3d09d544abe81">EPAULE_DROITE</a>, <a class="el" href="Mocap_8cpp.html#ad92d9cd23100462e870e649359a210f3">EPAULE_GAUCHE</a>, <a class="el" href="Mocap_8cpp.html#aa64100440ba9967f748473652756dc76">GENOU_DROIT</a>, <a class="el" href="Mocap_8cpp.html#ae99c2240e75f8b609785b866d549ae75">GENOU_GAUCHE</a>, <a class="el" href="Logger_8h.html#a7924ea74aab3505597ab4b3db868bafe">GlobalLogger</a>, <a class="el" href="Mocap_8cpp.html#a7285e846b2e871fac5a9c7b606d3f37b">gSceneContext</a>, <a class="el" href="Mocap_8cpp.html#a0b46ec6645ef0166c4d8863ef2b7362d">HANCHE_DROITE</a>, <a class="el" href="Mocap_8cpp.html#ace861295a0abb69f07791c2b28d7942e">HANCHE_GAUCHE</a>, <a class="el" href="Mocap_8cpp.html#a52aa6db25863687fab1f0b61b7707ef5">m_pUserTracker</a>, <a class="el" href="Mocap_8cpp.html#a6ef3e9f894d04e54eefe482959768049">MAIN_DROITE</a>, <a class="el" href="Mocap_8cpp.html#aea9c12696be083192af116082ff4b1bd">MAIN_GAUCHE</a>, <a class="el" href="Mocap_8cpp.html#a6d411e8ad694b405595d955aadb6bb9c">NUMBER_OF_LAYOUT</a>, <a class="el" href="Mocap_8cpp.html#a0e37bf37a1f00646e64357c96aaf2579">NUQUE</a>, <a class="el" href="Mocap_8cpp.html#a99387032fcc5e487d6fd7e5de3aab7bc">PIED_DROIT</a>, <a class="el" href="Mocap_8cpp.html#ac365075f5c2ecb77d88e1f84b19aae5b">PIED_GAUCHE</a>, <a class="el" href="Mocap_8cpp.html#aac6db334e2a38b71f7a1c456ffdd816d">TETE</a>, et <a class="el" href="Mocap_8cpp.html#a27e9ed753e897e86c9858169d67bb582">TORSE</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Window_8h.html#a0536355d9188bc1f1591f2cf42d0b87d">quit()</a>.</p>
+
+</div>
+</div>
+<a id="a8265dc2eb93655e9b289c61d3d5ab2cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8265dc2eb93655e9b289c61d3d5ab2cf">&#9670;&nbsp;</a></span>GetMembersCoordinates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GetMembersCoordinates </td>
+          <td>(</td>
+          <td class="paramtype">nite::UserTracker *&#160;</td>
+          <td class="paramname"><em>pUserTracker</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const nite::SkeletonJoint &amp;&#160;</td>
+          <td class="paramname"><em>joint1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classJointCoordinates.html">JointCoordinates</a> *&#160;</td>
+          <td class="paramname"><em>member</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui récupère la position de chaque articulations et définit son degré de validité : </p>
+<ul>
+<li>Si degré compris entre 0 et 0.5 le membre est considéré comme non fiable et non valide</li>
+<li>Si degré supérieur à 0.5 le membre est considéré comme valide </li>
+</ul>
+
+<p class="reference">Références <a class="el" href="Window_8cpp.html#ae3581acec97a4372cbca598533b80dc6">_pIdFBX</a>, <a class="el" href="Mocap_8cpp.html#a23e9e0ca23f9682028a1f4f6fcddb477">_sphere</a>, <a class="el" href="Window_8cpp.html#a5b25a069d46e2c8963f7a855f6a3582c">_windowHeight</a>, <a class="el" href="Window_8cpp.html#ac3fccedccc56d04d622b5745485a7568">_windowWidth</a>, <a class="el" href="classJointCoordinates.html#ac6e22635e41eefda0ed338309319f10b">JointCoordinates::available</a>, <a class="el" href="Window_8h.html#a4ddd570ad03298cdcf6728dcc3b82985">CALIBRATION</a>, <a class="el" href="Mocap_8cpp.html#a1c25fc415c3d497a62a45b2d8d93a484">g_nXRes</a>, <a class="el" href="Mocap_8cpp.html#af3f2b94be6548dc5a21777b68d8a411d">g_nYRes</a>, <a class="el" href="Window_8cpp.html#a3daa5985cb85baab76287f95f11adf11">MODE</a>, <a class="el" href="classJointCoordinates.html#a09da9ca56ed6939e794d8cd7570e03c9">JointCoordinates::x</a>, <a class="el" href="classJointCoordinates.html#a85353b819653a764314bd0ba2db2e63f">JointCoordinates::y</a>, et <a class="el" href="classJointCoordinates.html#a0225c6708d67bd0d3db8fb021c7a7cc2">JointCoordinates::z</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a4d0b3d36722ee10e793a4930802a5d19">DrawSkeleton()</a>.</p>
+
+</div>
+</div>
+<a id="a0464e2711327b4982f1868f25cdd3e83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0464e2711327b4982f1868f25cdd3e83">&#9670;&nbsp;</a></span>initAvatarMocap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int initAvatarMocap </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui initialise les layouts et les FBX du mode de Motion Capture. </p>
+
+<p class="reference">Références <a class="el" href="Mocap_8cpp.html#a4fa4448c53ff144d5a29df7fe7805c2a">_background</a>, <a class="el" href="Mocap_8cpp.html#a6a959e450dbb3fe1fb1992af08889da4">_frameKinect</a>, <a class="el" href="Mocap_8cpp.html#aa3bff517a690c39f04a430027d477cf2">_layout</a>, <a class="el" href="Mocap_8cpp.html#a23e9e0ca23f9682028a1f4f6fcddb477">_sphere</a>, <a class="el" href="Window_8cpp.html#a5b25a069d46e2c8963f7a855f6a3582c">_windowHeight</a>, <a class="el" href="Window_8cpp.html#ac3fccedccc56d04d622b5745485a7568">_windowWidth</a>, <a class="el" href="Mocap_8cpp.html#a0b7f22583147b8ecbd40b58f014aeb5b">CreateContext()</a>, <a class="el" href="Mocap_8cpp.html#acbbe62b6ec607f44a7046897d0af5265">currentAvatar</a>, <a class="el" href="Mocap_8cpp.html#aab70a074e12d6223c141832a779e9ade">FBXNameMembers</a>, <a class="el" href="Mocap_8cpp.html#af4d0466001de274d21da52c1319d8fc2">FBXPath</a>, <a class="el" href="structSLayout.html#a1f84f90bf878d0f9da545e92b9182da2">SLayout::height</a>, <a class="el" href="Mocap_8cpp.html#a6c471bec29122fd03997225028ad02c2">initTextures()</a>, <a class="el" href="Mocap_8cpp.html#a6d411e8ad694b405595d955aadb6bb9c">NUMBER_OF_LAYOUT</a>, <a class="el" href="Mocap_8cpp.html#ab7b9c181e0e4d6c10e53ad6ed5eecfbd">PICTURE_FLECHE_NEXT</a>, <a class="el" href="Mocap_8cpp.html#a442201f226bc8ba59e684ee4a6c4a29c">PICTURE_FLECHE_PREV</a>, <a class="el" href="Mocap_8cpp.html#ace63f13794c13aeb825d3e5c229a1f1b">PICTURE_MAIN_DROITE</a>, <a class="el" href="Mocap_8cpp.html#a8c6b7917877be516490536df2dde14ac">PICTURE_MAIN_GAUCHE</a>, <a class="el" href="Mocap_8cpp.html#a25d7ea23a2e9d7ad361ae7b9d56f6de1">readMembersName()</a>, <a class="el" href="structSLayout.html#ae690896feddb1225944931f24e88ffbd">SLayout::surface</a>, <a class="el" href="structSLayout.html#aaf8065b600d34ab2e266e83321904371">SLayout::width</a>, <a class="el" href="structSLayout.html#a27042e17ce4eb84fe4fabed803f4621f">SLayout::x</a>, et <a class="el" href="structSLayout.html#abebcdf3802f667c96ac054a13a3b949b">SLayout::y</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Window_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>.</p>
+
+</div>
+</div>
+<a id="a6c471bec29122fd03997225028ad02c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c471bec29122fd03997225028ad02c2">&#9670;&nbsp;</a></span>initTextures()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void initTextures </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction qui charge les tectures (background, flèches ...) </p>
+
+<p class="reference">Références <a class="el" href="Mocap_8cpp.html#a06703f9f226d067f088616eb68003922">_texturesId</a>, <a class="el" href="Menu_8cpp.html#a8484beb0231cb5808cda3effc711e02d">files</a>, et <a class="el" href="Mocap_8cpp.html#a311389c8b95a5c3bc192a04ee1590d09">NUMBER_TEXTURE</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a0464e2711327b4982f1868f25cdd3e83">initAvatarMocap()</a>.</p>
+
+</div>
+</div>
+<a id="a7dbad2718de835759c8355053663062a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dbad2718de835759c8355053663062a">&#9670;&nbsp;</a></span>isCalibrationReady()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isCalibrationReady </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui retourne TRUE si tous les membres du squelettes ont bien été détécté (degré de validité &gt; 0.5) et False dansle cas contraire. </p>
+
+<p class="reference">Références <a class="el" href="classJointCoordinates.html#ac6e22635e41eefda0ed338309319f10b">JointCoordinates::available</a>, <a class="el" href="Mocap_8cpp.html#ac3390585650091a51e876f18f1e12996">BASE_COLONNE_V</a>, <a class="el" href="Mocap_8cpp.html#a2088b2e81f996913343eade332f3dd23">COUDE_DROIT</a>, <a class="el" href="Mocap_8cpp.html#a311cff12601e9c5e00aef9d0166c78f0">COUDE_GAUCHE</a>, <a class="el" href="Mocap_8cpp.html#a48913ec72b13960cafd3d09d544abe81">EPAULE_DROITE</a>, <a class="el" href="Mocap_8cpp.html#ad92d9cd23100462e870e649359a210f3">EPAULE_GAUCHE</a>, <a class="el" href="Mocap_8cpp.html#aa64100440ba9967f748473652756dc76">GENOU_DROIT</a>, <a class="el" href="Mocap_8cpp.html#ae99c2240e75f8b609785b866d549ae75">GENOU_GAUCHE</a>, <a class="el" href="Mocap_8cpp.html#a0b46ec6645ef0166c4d8863ef2b7362d">HANCHE_DROITE</a>, <a class="el" href="Mocap_8cpp.html#ace861295a0abb69f07791c2b28d7942e">HANCHE_GAUCHE</a>, <a class="el" href="Mocap_8cpp.html#a6ef3e9f894d04e54eefe482959768049">MAIN_DROITE</a>, <a class="el" href="Mocap_8cpp.html#aea9c12696be083192af116082ff4b1bd">MAIN_GAUCHE</a>, <a class="el" href="Mocap_8cpp.html#a0e37bf37a1f00646e64357c96aaf2579">NUQUE</a>, <a class="el" href="Mocap_8cpp.html#a99387032fcc5e487d6fd7e5de3aab7bc">PIED_DROIT</a>, <a class="el" href="Mocap_8cpp.html#ac365075f5c2ecb77d88e1f84b19aae5b">PIED_GAUCHE</a>, et <a class="el" href="Mocap_8cpp.html#aac6db334e2a38b71f7a1c456ffdd816d">TETE</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="CalibrationMode_8h.html#a56fa49d56a7fe56269f3646c8de17c74">CalibrationMode()</a>.</p>
+
+</div>
+</div>
+<a id="a890e6e46f3fb19e074b3a7efec32c2be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a890e6e46f3fb19e074b3a7efec32c2be">&#9670;&nbsp;</a></span>isNextClicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool isNextClicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction qui analyse si la flèche permettant de passer au FBX suivant été cliquée ou non. </p>
+
+<p class="reference">Références <a class="el" href="Mocap_8cpp.html#aa3bff517a690c39f04a430027d477cf2">_layout</a>, <a class="el" href="Logger_8h.html#a7924ea74aab3505597ab4b3db868bafe">GlobalLogger</a>, <a class="el" href="structSLayout.html#a1f84f90bf878d0f9da545e92b9182da2">SLayout::height</a>, <a class="el" href="classJointCoordinates.html#a26ea9dfbda1d692b972e7c7500c0486a">JointCoordinates::isAvailable()</a>, <a class="el" href="Mocap_8cpp.html#a6ef3e9f894d04e54eefe482959768049">MAIN_DROITE</a>, <a class="el" href="Mocap_8cpp.html#ab7b9c181e0e4d6c10e53ad6ed5eecfbd">PICTURE_FLECHE_NEXT</a>, <a class="el" href="Mocap_8cpp.html#a277955e34b7de0cf5307f15036a5a293">stop</a>, <a class="el" href="structSLayout.html#aaf8065b600d34ab2e266e83321904371">SLayout::width</a>, <a class="el" href="classJointCoordinates.html#a09da9ca56ed6939e794d8cd7570e03c9">JointCoordinates::x</a>, <a class="el" href="structSLayout.html#a27042e17ce4eb84fe4fabed803f4621f">SLayout::x</a>, <a class="el" href="classJointCoordinates.html#a85353b819653a764314bd0ba2db2e63f">JointCoordinates::y</a>, et <a class="el" href="structSLayout.html#abebcdf3802f667c96ac054a13a3b949b">SLayout::y</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a271af2d9baa3f6dafbf76206953e55b6">drawMocap()</a>.</p>
+
+</div>
+</div>
+<a id="a438709ff4449dc468d0fd2a02b7896b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a438709ff4449dc468d0fd2a02b7896b4">&#9670;&nbsp;</a></span>isPreviousClicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool isPreviousClicked </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction qui analyse si la flèche permettant de passer au FBX précédent à été cliquée ou non. </p>
+
+<p class="reference">Références <a class="el" href="Mocap_8cpp.html#aa3bff517a690c39f04a430027d477cf2">_layout</a>, <a class="el" href="Logger_8h.html#a7924ea74aab3505597ab4b3db868bafe">GlobalLogger</a>, <a class="el" href="structSLayout.html#a1f84f90bf878d0f9da545e92b9182da2">SLayout::height</a>, <a class="el" href="classJointCoordinates.html#a26ea9dfbda1d692b972e7c7500c0486a">JointCoordinates::isAvailable()</a>, <a class="el" href="Mocap_8cpp.html#aea9c12696be083192af116082ff4b1bd">MAIN_GAUCHE</a>, <a class="el" href="Mocap_8cpp.html#a442201f226bc8ba59e684ee4a6c4a29c">PICTURE_FLECHE_PREV</a>, <a class="el" href="Mocap_8cpp.html#a277955e34b7de0cf5307f15036a5a293">stop</a>, <a class="el" href="structSLayout.html#aaf8065b600d34ab2e266e83321904371">SLayout::width</a>, <a class="el" href="classJointCoordinates.html#a09da9ca56ed6939e794d8cd7570e03c9">JointCoordinates::x</a>, <a class="el" href="structSLayout.html#a27042e17ce4eb84fe4fabed803f4621f">SLayout::x</a>, <a class="el" href="classJointCoordinates.html#a85353b819653a764314bd0ba2db2e63f">JointCoordinates::y</a>, et <a class="el" href="structSLayout.html#abebcdf3802f667c96ac054a13a3b949b">SLayout::y</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a271af2d9baa3f6dafbf76206953e55b6">drawMocap()</a>.</p>
+
+</div>
+</div>
+<a id="a4cfb018f99aac975f16b96dcc459bd9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cfb018f99aac975f16b96dcc459bd9e">&#9670;&nbsp;</a></span>printArrows()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void printArrows </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction qui affiche les deux flèches permettant de passer au FBX suivant ou précédent. </p>
+
+<p class="reference">Références <a class="el" href="Mocap_8cpp.html#aa3bff517a690c39f04a430027d477cf2">_layout</a>, <a class="el" href="Mocap_8cpp.html#a06703f9f226d067f088616eb68003922">_texturesId</a>, <a class="el" href="Window_8cpp.html#a5b25a069d46e2c8963f7a855f6a3582c">_windowHeight</a>, <a class="el" href="Window_8cpp.html#ac3fccedccc56d04d622b5745485a7568">_windowWidth</a>, <a class="el" href="Mocap_8cpp.html#ab7b9c181e0e4d6c10e53ad6ed5eecfbd">PICTURE_FLECHE_NEXT</a>, <a class="el" href="Mocap_8cpp.html#a442201f226bc8ba59e684ee4a6c4a29c">PICTURE_FLECHE_PREV</a>, <a class="el" href="Mocap_8cpp.html#aea315a77a7192d8753c46aba1d4b1320">TEXTURE_ARROW</a>, <a class="el" href="structSLayout.html#a27042e17ce4eb84fe4fabed803f4621f">SLayout::x</a>, et <a class="el" href="structSLayout.html#abebcdf3802f667c96ac054a13a3b949b">SLayout::y</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a271af2d9baa3f6dafbf76206953e55b6">drawMocap()</a>.</p>
+
+</div>
+</div>
+<a id="a64598322ffd1fea52e969a6b0d5d2928"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64598322ffd1fea52e969a6b0d5d2928">&#9670;&nbsp;</a></span>printFrameKinect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printFrameKinect </td>
+          <td>(</td>
+          <td class="paramtype">nite::UserTrackerFrameRef *&#160;</td>
+          <td class="paramname"><em>userTrackerFrame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui affiche les frames de la kinect en fonction du MODE définit : </p>
+<ul>
+<li>Mode CALIBRATION : frame prend toute la dimensions de la fenêtre</li>
+<li>Mode MENU et MOCAP : frame encadré dans un rectangle en haut a droite de la fenêtre</li>
+<li>Mode GAME : Pas de frame affichée </li>
+</ul>
+
+<p class="reference">Références <a class="el" href="Mocap_8cpp.html#a6a959e450dbb3fe1fb1992af08889da4">_frameKinect</a>, <a class="el" href="Window_8cpp.html#ae3581acec97a4372cbca598533b80dc6">_pIdFBX</a>, <a class="el" href="Window_8cpp.html#a5b25a069d46e2c8963f7a855f6a3582c">_windowHeight</a>, <a class="el" href="Window_8cpp.html#ac3fccedccc56d04d622b5745485a7568">_windowWidth</a>, <a class="el" href="NiteSampleUtilities_8h.html#a8fe0290ef1ee53df7e475da7aac8bc7c">calculateHistogram()</a>, <a class="el" href="Window_8h.html#a4ddd570ad03298cdcf6728dcc3b82985">CALIBRATION</a>, <a class="el" href="Mocap_8cpp.html#a31618c3630a396dac51639128efcd207">depthFrame</a>, <a class="el" href="Mocap_8cpp.html#a1c25fc415c3d497a62a45b2d8d93a484">g_nXRes</a>, <a class="el" href="Mocap_8cpp.html#af3f2b94be6548dc5a21777b68d8a411d">g_nYRes</a>, <a class="el" href="Game_8cpp.html#a328d66dadd9912ad479672699043bb53">lumpos</a>, <a class="el" href="Mocap_8cpp.html#a5a4fe1d46f2a5f3403b928580da09433">m_nTexMapX</a>, <a class="el" href="Mocap_8cpp.html#af0fe316128a3775b38f940d1046d188f">m_nTexMapY</a>, <a class="el" href="Mocap_8cpp.html#aa4acb4ed2b829cd85d3e6a22f4c2e65a">m_pDepthHist</a>, <a class="el" href="Mocap_8cpp.html#a4995a9e3216497167fcd8220bced2bee">m_pTexMap</a>, <a class="el" href="Mocap_8cpp.html#a9789b6e66b4a625f9a8d6c14a4aff6d2">MIN_CHUNKS_SIZE</a>, <a class="el" href="Window_8cpp.html#a3daa5985cb85baab76287f95f11adf11">MODE</a>, <a class="el" href="Mocap_8cpp.html#aaed9648c316ffe7059c8f4b5f6afc601">printBackground</a>, et <a class="el" href="Mocap_8cpp.html#affab13c068bfe8f3f432e7a41130d0be">TEXTURE_SIZE</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a917d1117b31c893877cc84c57894d161">trackUser()</a>.</p>
+
+</div>
+</div>
+<a id="a9a0bbf68afce0ff658a9c42487c7bd6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a0bbf68afce0ff658a9c42487c7bd6f">&#9670;&nbsp;</a></span>printHands()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printHands </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui affiche les mains, permettant de cliquer sur les flèches. </p>
+
+<p class="reference">Références <a class="el" href="Mocap_8cpp.html#aa3bff517a690c39f04a430027d477cf2">_layout</a>, <a class="el" href="Mocap_8cpp.html#a06703f9f226d067f088616eb68003922">_texturesId</a>, <a class="el" href="classJointCoordinates.html#a2665f1ef1a7d93066bee9d1d2b8e61f1">JointCoordinates::angle</a>, <a class="el" href="classJointCoordinates.html#ac6e22635e41eefda0ed338309319f10b">JointCoordinates::available</a>, <a class="el" href="Mocap_8cpp.html#a2088b2e81f996913343eade332f3dd23">COUDE_DROIT</a>, <a class="el" href="Mocap_8cpp.html#a311cff12601e9c5e00aef9d0166c78f0">COUDE_GAUCHE</a>, <a class="el" href="Mocap_8cpp.html#a6ef3e9f894d04e54eefe482959768049">MAIN_DROITE</a>, <a class="el" href="Mocap_8cpp.html#aea9c12696be083192af116082ff4b1bd">MAIN_GAUCHE</a>, <a class="el" href="Mocap_8cpp.html#ace63f13794c13aeb825d3e5c229a1f1b">PICTURE_MAIN_DROITE</a>, <a class="el" href="Mocap_8cpp.html#a8c6b7917877be516490536df2dde14ac">PICTURE_MAIN_GAUCHE</a>, <a class="el" href="Mocap_8cpp.html#ae24dc5f5bad79f3bdeaa412827cce662">TEXTURE_HAND</a>, <a class="el" href="classJointCoordinates.html#a09da9ca56ed6939e794d8cd7570e03c9">JointCoordinates::x</a>, <a class="el" href="structSLayout.html#a27042e17ce4eb84fe4fabed803f4621f">SLayout::x</a>, <a class="el" href="classJointCoordinates.html#a85353b819653a764314bd0ba2db2e63f">JointCoordinates::y</a>, et <a class="el" href="structSLayout.html#abebcdf3802f667c96ac054a13a3b949b">SLayout::y</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Window_8cpp.html#a96a68ee53ffcf494ca60f94ac05d94bb">draw()</a>, et <a class="el" href="Mocap_8h.html#a271af2d9baa3f6dafbf76206953e55b6">drawMocap()</a>.</p>
+
+</div>
+</div>
+<a id="a25d7ea23a2e9d7ad361ae7b9d56f6de1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25d7ea23a2e9d7ad361ae7b9d56f6de1">&#9670;&nbsp;</a></span>readMembersName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int readMembersName </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui lie et récupère les informations du fichier d'articulations des FBX (fichier servant à connaitre les noms des articulations du FBX) </p>
+
+<p class="reference">Références <a class="el" href="Mocap_8cpp.html#ac3390585650091a51e876f18f1e12996">BASE_COLONNE_V</a>, <a class="el" href="Mocap_8cpp.html#a340686b70496e31c0ed4320014bb82a0">copyMembersName()</a>, <a class="el" href="Mocap_8cpp.html#a2088b2e81f996913343eade332f3dd23">COUDE_DROIT</a>, <a class="el" href="Mocap_8cpp.html#a311cff12601e9c5e00aef9d0166c78f0">COUDE_GAUCHE</a>, <a class="el" href="Mocap_8cpp.html#a48913ec72b13960cafd3d09d544abe81">EPAULE_DROITE</a>, <a class="el" href="Mocap_8cpp.html#ad92d9cd23100462e870e649359a210f3">EPAULE_GAUCHE</a>, <a class="el" href="Mocap_8cpp.html#aa64100440ba9967f748473652756dc76">GENOU_DROIT</a>, <a class="el" href="Mocap_8cpp.html#ae99c2240e75f8b609785b866d549ae75">GENOU_GAUCHE</a>, <a class="el" href="Logger_8h.html#a7924ea74aab3505597ab4b3db868bafe">GlobalLogger</a>, <a class="el" href="Mocap_8cpp.html#a0b46ec6645ef0166c4d8863ef2b7362d">HANCHE_DROITE</a>, <a class="el" href="Mocap_8cpp.html#ace861295a0abb69f07791c2b28d7942e">HANCHE_GAUCHE</a>, <a class="el" href="Mocap_8cpp.html#a6ef3e9f894d04e54eefe482959768049">MAIN_DROITE</a>, <a class="el" href="Mocap_8cpp.html#aea9c12696be083192af116082ff4b1bd">MAIN_GAUCHE</a>, <a class="el" href="classJointCoordinates.html#a48957ab9421dacd88fa4a02ebb8abdb5">JointCoordinates::member_name</a>, <a class="el" href="classJointCoordinates.html#a8f21531f53e5efc52ef594aecc1ca5c5">JointCoordinates::name</a>, <a class="el" href="Mocap_8cpp.html#a0e37bf37a1f00646e64357c96aaf2579">NUQUE</a>, <a class="el" href="Mocap_8cpp.html#a99387032fcc5e487d6fd7e5de3aab7bc">PIED_DROIT</a>, <a class="el" href="Mocap_8cpp.html#ac365075f5c2ecb77d88e1f84b19aae5b">PIED_GAUCHE</a>, et <a class="el" href="Mocap_8cpp.html#aac6db334e2a38b71f7a1c456ffdd816d">TETE</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a271af2d9baa3f6dafbf76206953e55b6">drawMocap()</a>, <a class="el" href="Mocap_8h.html#a0464e2711327b4982f1868f25cdd3e83">initAvatarMocap()</a>, et <a class="el" href="Window_8cpp.html#ab36adeaf63eed2490edca3408eac9c06">keydown()</a>.</p>
+
+</div>
+</div>
+<a id="a7387b0a732dd0e6cddfa0edf847a59cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7387b0a732dd0e6cddfa0edf847a59cf">&#9670;&nbsp;</a></span>testPoseExit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int testPoseExit </td>
+          <td>(</td>
+          <td class="paramtype">nite::UserTrackerFrameRef *&#160;</td>
+          <td class="paramname"><em>userTrackerFrame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const nite::UserData &amp;&#160;</td>
+          <td class="paramname"><em>user</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui analyse la position de l'utilisateur afin de détécter la position EXIT (croisement des bras en forme de X) et applique une action en focntion du MODE courant. </p>
+
+<p class="reference">Références <a class="el" href="Window_8cpp.html#a771cfbc1261b70be5e727700a78ac7cd">adaptTheLandmark()</a>, <a class="el" href="Window_8h.html#a4ddd570ad03298cdcf6728dcc3b82985">CALIBRATION</a>, <a class="el" href="Mocap_8cpp.html#a53a5320c369234d2316f843b3b8d6da0">g_poseTimeoutToExit</a>, <a class="el" href="Window_8h.html#a81dbe4cce536eb83872b539079ba4139">GAME</a>, <a class="el" href="Mocap_8cpp.html#aae438b9a392def1d766e087596b5ba28">m_poseTime</a>, <a class="el" href="Mocap_8cpp.html#adad2559a7bcc40bf82a81c377d7082b9">m_poseUser</a>, <a class="el" href="Window_8h.html#ad0d059e6a83d21bea4f4db1c9fbd240b">MENU</a>, <a class="el" href="Window_8h.html#ae4ab47b2f8b3a39cbfd7d95e280cf6ac">MOCAP</a>, <a class="el" href="Window_8cpp.html#a3daa5985cb85baab76287f95f11adf11">MODE</a>, <a class="el" href="NiteEnums_8h.html#a8c33d11d876118f7799f0d7ae4545573a6f842c177d2d20713f348a4493f11af2">POSE_CROSSED_HANDS</a>, et <a class="el" href="Window_8cpp.html#a0536355d9188bc1f1591f2cf42d0b87d">quit()</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a917d1117b31c893877cc84c57894d161">trackUser()</a>.</p>
+
+</div>
+</div>
+<a id="a917d1117b31c893877cc84c57894d161"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a917d1117b31c893877cc84c57894d161">&#9670;&nbsp;</a></span>trackUser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void trackUser </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction qui récupère les frames de la kinect, et track les utilisateurs. Une fois qu'un utilisateurs est trouvé, la fonction de detection du squelette et des membres est appelée. </p>
+
+<p class="reference">Références <a class="el" href="Mocap_8cpp.html#a31618c3630a396dac51639128efcd207">depthFrame</a>, <a class="el" href="Mocap_8cpp.html#a4d0b3d36722ee10e793a4930802a5d19">DrawSkeleton()</a>, <a class="el" href="Mocap_8cpp.html#a1c25fc415c3d497a62a45b2d8d93a484">g_nXRes</a>, <a class="el" href="Mocap_8cpp.html#af3f2b94be6548dc5a21777b68d8a411d">g_nYRes</a>, <a class="el" href="Window_8h.html#a81dbe4cce536eb83872b539079ba4139">GAME</a>, <a class="el" href="Mocap_8cpp.html#a52aa6db25863687fab1f0b61b7707ef5">m_pUserTracker</a>, <a class="el" href="Window_8cpp.html#a3daa5985cb85baab76287f95f11adf11">MODE</a>, <a class="el" href="NiteEnums_8h.html#a8c33d11d876118f7799f0d7ae4545573a6f842c177d2d20713f348a4493f11af2">POSE_CROSSED_HANDS</a>, <a class="el" href="Mocap_8cpp.html#aaed9648c316ffe7059c8f4b5f6afc601">printBackground</a>, <a class="el" href="Mocap_8cpp.html#a64598322ffd1fea52e969a6b0d5d2928">printFrameKinect()</a>, <a class="el" href="NiteEnums_8h.html#a132d8a6506f21f1aea05b08ce0732212aeedfcb92f9479d8a75d773cedeb41a9b">SKELETON_TRACKED</a>, <a class="el" href="NiteEnums_8h.html#a67a0db04d321a74b7e7fcfd3f1a3f70ba7e4a42e3b6dd63708c64cf3db6f69566">STATUS_OK</a>, <a class="el" href="Mocap_8cpp.html#a953e674724cd88c00910a52cd6cb0aa5">stopp</a>, et <a class="el" href="Mocap_8cpp.html#a7387b0a732dd0e6cddfa0edf847a59cf">testPoseExit()</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="Window_8cpp.html#a96a68ee53ffcf494ca60f94ac05d94bb">draw()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des variables</h2>
+<a id="a4fa4448c53ff144d5a29df7fe7805c2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fa4448c53ff144d5a29df7fe7805c2a">&#9670;&nbsp;</a></span>_background</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint _background = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8cpp.html#acbd5457c126570af763ea24dc41da830">drawBackground()</a>, et <a class="el" href="Mocap_8h.html#a0464e2711327b4982f1868f25cdd3e83">initAvatarMocap()</a>.</p>
+
+</div>
+</div>
+<a id="abc26f25b5a2e76a9f1ec022137d8e7f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc26f25b5a2e76a9f1ec022137d8e7f2">&#9670;&nbsp;</a></span>_cur_color</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Uint32 _cur_color = 0xFF0000FF</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6a959e450dbb3fe1fb1992af08889da4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a959e450dbb3fe1fb1992af08889da4">&#9670;&nbsp;</a></span>_frameKinect</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint _frameKinect = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a0464e2711327b4982f1868f25cdd3e83">initAvatarMocap()</a>, et <a class="el" href="Mocap_8cpp.html#a64598322ffd1fea52e969a6b0d5d2928">printFrameKinect()</a>.</p>
+
+</div>
+</div>
+<a id="aa3bff517a690c39f04a430027d477cf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3bff517a690c39f04a430027d477cf2">&#9670;&nbsp;</a></span>_layout</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Window_8h.html#a3c290a2c8b02498d579e18dff800a433">pLayout</a> _layout[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#abe284ee34e36df76528f48d2dcf1515c">freeMocap()</a>, <a class="el" href="Mocap_8h.html#a0464e2711327b4982f1868f25cdd3e83">initAvatarMocap()</a>, <a class="el" href="Mocap_8cpp.html#a890e6e46f3fb19e074b3a7efec32c2be">isNextClicked()</a>, <a class="el" href="Mocap_8cpp.html#a438709ff4449dc468d0fd2a02b7896b4">isPreviousClicked()</a>, <a class="el" href="Mocap_8cpp.html#a4cfb018f99aac975f16b96dcc459bd9e">printArrows()</a>, et <a class="el" href="Mocap_8h.html#a9a0bbf68afce0ff658a9c42487c7bd6f">printHands()</a>.</p>
+
+</div>
+</div>
+<a id="a23e9e0ca23f9682028a1f4f6fcddb477"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23e9e0ca23f9682028a1f4f6fcddb477">&#9670;&nbsp;</a></span>_sphere</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint _sphere = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a8265dc2eb93655e9b289c61d3d5ab2cf">GetMembersCoordinates()</a>, et <a class="el" href="Mocap_8h.html#a0464e2711327b4982f1868f25cdd3e83">initAvatarMocap()</a>.</p>
+
+</div>
+</div>
+<a id="a06703f9f226d067f088616eb68003922"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06703f9f226d067f088616eb68003922">&#9670;&nbsp;</a></span>_texturesId</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint _texturesId[<a class="el" href="Mocap_8cpp.html#a311389c8b95a5c3bc192a04ee1590d09">NUMBER_TEXTURE</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8cpp.html#acbd5457c126570af763ea24dc41da830">drawBackground()</a>, <a class="el" href="Mocap_8h.html#abe284ee34e36df76528f48d2dcf1515c">freeMocap()</a>, <a class="el" href="Mocap_8cpp.html#a6c471bec29122fd03997225028ad02c2">initTextures()</a>, <a class="el" href="Mocap_8cpp.html#a4cfb018f99aac975f16b96dcc459bd9e">printArrows()</a>, et <a class="el" href="Mocap_8h.html#a9a0bbf68afce0ff658a9c42487c7bd6f">printHands()</a>.</p>
+
+</div>
+</div>
+<a id="ac3390585650091a51e876f18f1e12996"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3390585650091a51e876f18f1e12996">&#9670;&nbsp;</a></span>BASE_COLONNE_V</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJointCoordinates.html">JointCoordinates</a>* BASE_COLONNE_V = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="DrawScene_8cpp.html#a8f89d39741504557872d54851dccc9ea">adjustSensitivity()</a>, <a class="el" href="DrawScene_8cpp.html#ab959667c5e38af0b16d7235336cc564b">affectAngleToNode()</a>, <a class="el" href="Mocap_8h.html#ac4046159c4db741eff35a955c5e6ac93">calculateMembersAngle()</a>, <a class="el" href="Game_8h.html#ad8e06baf3b119fde9bb12c050eccc5ef">drawPlane()</a>, <a class="el" href="Mocap_8h.html#a7dbad2718de835759c8355053663062a">isCalibrationReady()</a>, <a class="el" href="Mocap_8h.html#a25d7ea23a2e9d7ad361ae7b9d56f6de1">readMembersName()</a>, et <a class="el" href="Game_8h.html#ab00568868933dc93af0ce334ead3a813">setOrientationPlane()</a>.</p>
+
+</div>
+</div>
+<a id="aa9d6226487f3cecf4192b3f2c47b78fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9d6226487f3cecf4192b3f2c47b78fe">&#9670;&nbsp;</a></span>colorCountt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int colorCountt = 3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a4d0b3d36722ee10e793a4930802a5d19">DrawSkeleton()</a>.</p>
+
+</div>
+</div>
+<a id="ad41694d83159a87401c04ee31ad4637c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad41694d83159a87401c04ee31ad4637c">&#9670;&nbsp;</a></span>Colorss</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Colorss[][3] = {{1, 0, 0}, {0, 1, 0}, {0, 0, 1}, {1, 1, 1}}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2088b2e81f996913343eade332f3dd23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2088b2e81f996913343eade332f3dd23">&#9670;&nbsp;</a></span>COUDE_DROIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJointCoordinates.html">JointCoordinates</a>* COUDE_DROIT = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="DrawScene_8cpp.html#a8f89d39741504557872d54851dccc9ea">adjustSensitivity()</a>, <a class="el" href="DrawScene_8cpp.html#ab959667c5e38af0b16d7235336cc564b">affectAngleToNode()</a>, <a class="el" href="Mocap_8h.html#ac4046159c4db741eff35a955c5e6ac93">calculateMembersAngle()</a>, <a class="el" href="Mocap_8h.html#a4d0b3d36722ee10e793a4930802a5d19">DrawSkeleton()</a>, <a class="el" href="Mocap_8h.html#abe284ee34e36df76528f48d2dcf1515c">freeMocap()</a>, <a class="el" href="Mocap_8h.html#a7dbad2718de835759c8355053663062a">isCalibrationReady()</a>, <a class="el" href="Mocap_8h.html#a9a0bbf68afce0ff658a9c42487c7bd6f">printHands()</a>, et <a class="el" href="Mocap_8h.html#a25d7ea23a2e9d7ad361ae7b9d56f6de1">readMembersName()</a>.</p>
+
+</div>
+</div>
+<a id="a311cff12601e9c5e00aef9d0166c78f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a311cff12601e9c5e00aef9d0166c78f0">&#9670;&nbsp;</a></span>COUDE_GAUCHE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJointCoordinates.html">JointCoordinates</a>* COUDE_GAUCHE = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="DrawScene_8cpp.html#a8f89d39741504557872d54851dccc9ea">adjustSensitivity()</a>, <a class="el" href="DrawScene_8cpp.html#ab959667c5e38af0b16d7235336cc564b">affectAngleToNode()</a>, <a class="el" href="Mocap_8h.html#ac4046159c4db741eff35a955c5e6ac93">calculateMembersAngle()</a>, <a class="el" href="Mocap_8h.html#a4d0b3d36722ee10e793a4930802a5d19">DrawSkeleton()</a>, <a class="el" href="Mocap_8h.html#abe284ee34e36df76528f48d2dcf1515c">freeMocap()</a>, <a class="el" href="Mocap_8h.html#a7dbad2718de835759c8355053663062a">isCalibrationReady()</a>, <a class="el" href="Mocap_8h.html#a9a0bbf68afce0ff658a9c42487c7bd6f">printHands()</a>, et <a class="el" href="Mocap_8h.html#a25d7ea23a2e9d7ad361ae7b9d56f6de1">readMembersName()</a>.</p>
+
+</div>
+</div>
+<a id="acbbe62b6ec607f44a7046897d0af5265"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbbe62b6ec607f44a7046897d0af5265">&#9670;&nbsp;</a></span>currentAvatar</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int currentAvatar = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="DrawScene_8cpp.html#ab959667c5e38af0b16d7235336cc564b">affectAngleToNode()</a>, <a class="el" href="Mocap_8cpp.html#acbd5457c126570af763ea24dc41da830">drawBackground()</a>, <a class="el" href="Mocap_8h.html#a271af2d9baa3f6dafbf76206953e55b6">drawMocap()</a>, <a class="el" href="Mocap_8h.html#a0464e2711327b4982f1868f25cdd3e83">initAvatarMocap()</a>, et <a class="el" href="Window_8cpp.html#ab36adeaf63eed2490edca3408eac9c06">keydown()</a>.</p>
+
+</div>
+</div>
+<a id="a31618c3630a396dac51639128efcd207"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31618c3630a396dac51639128efcd207">&#9670;&nbsp;</a></span>depthFrame</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">openni::VideoFrameRef depthFrame</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="NiteSampleUtilities_8h.html#a8fe0290ef1ee53df7e475da7aac8bc7c">calculateHistogram()</a>, <a class="el" href="Mocap_8cpp.html#a64598322ffd1fea52e969a6b0d5d2928">printFrameKinect()</a>, et <a class="el" href="Mocap_8h.html#a917d1117b31c893877cc84c57894d161">trackUser()</a>.</p>
+
+</div>
+</div>
+<a id="a48913ec72b13960cafd3d09d544abe81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48913ec72b13960cafd3d09d544abe81">&#9670;&nbsp;</a></span>EPAULE_DROITE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJointCoordinates.html">JointCoordinates</a>* EPAULE_DROITE = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="DrawScene_8cpp.html#a8f89d39741504557872d54851dccc9ea">adjustSensitivity()</a>, <a class="el" href="DrawScene_8cpp.html#ab959667c5e38af0b16d7235336cc564b">affectAngleToNode()</a>, <a class="el" href="Mocap_8h.html#ac4046159c4db741eff35a955c5e6ac93">calculateMembersAngle()</a>, <a class="el" href="Mocap_8h.html#a4d0b3d36722ee10e793a4930802a5d19">DrawSkeleton()</a>, <a class="el" href="Mocap_8h.html#abe284ee34e36df76528f48d2dcf1515c">freeMocap()</a>, <a class="el" href="Mocap_8h.html#a7dbad2718de835759c8355053663062a">isCalibrationReady()</a>, et <a class="el" href="Mocap_8h.html#a25d7ea23a2e9d7ad361ae7b9d56f6de1">readMembersName()</a>.</p>
+
+</div>
+</div>
+<a id="ad92d9cd23100462e870e649359a210f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad92d9cd23100462e870e649359a210f3">&#9670;&nbsp;</a></span>EPAULE_GAUCHE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJointCoordinates.html">JointCoordinates</a>* EPAULE_GAUCHE = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="DrawScene_8cpp.html#a8f89d39741504557872d54851dccc9ea">adjustSensitivity()</a>, <a class="el" href="DrawScene_8cpp.html#ab959667c5e38af0b16d7235336cc564b">affectAngleToNode()</a>, <a class="el" href="Mocap_8h.html#ac4046159c4db741eff35a955c5e6ac93">calculateMembersAngle()</a>, <a class="el" href="Mocap_8h.html#a4d0b3d36722ee10e793a4930802a5d19">DrawSkeleton()</a>, <a class="el" href="Mocap_8h.html#abe284ee34e36df76528f48d2dcf1515c">freeMocap()</a>, <a class="el" href="Mocap_8h.html#a7dbad2718de835759c8355053663062a">isCalibrationReady()</a>, et <a class="el" href="Mocap_8h.html#a25d7ea23a2e9d7ad361ae7b9d56f6de1">readMembersName()</a>.</p>
+
+</div>
+</div>
+<a id="aab70a074e12d6223c141832a779e9ade"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab70a074e12d6223c141832a779e9ade">&#9670;&nbsp;</a></span>FBXNameMembers</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* FBXNameMembers[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur initiale :</b><div class="fragment"><div class="line">=  {</div><div class="line">    <span class="stringliteral">&quot;FBXLoader/Models/Zombie/Phychozomb.members&quot;</span>,</div><div class="line">    <span class="stringliteral">&quot;FBXLoader/Models/Girl/Girl.members&quot;</span>,</div><div class="line">    <span class="stringliteral">&quot;FBXLoader/Models/Man/Man.members&quot;</span>,</div><div class="line">    <span class="stringliteral">&quot;FBXLoader/Models/Peggy/Peggy.members&quot;</span>,</div><div class="line">    <span class="stringliteral">&quot;FBXLoader/Models/mari/BrettHughes.members&quot;</span>}</div></div><!-- fragment -->
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a271af2d9baa3f6dafbf76206953e55b6">drawMocap()</a>, <a class="el" href="Mocap_8h.html#a0464e2711327b4982f1868f25cdd3e83">initAvatarMocap()</a>, et <a class="el" href="Window_8cpp.html#ab36adeaf63eed2490edca3408eac9c06">keydown()</a>.</p>
+
+</div>
+</div>
+<a id="af4d0466001de274d21da52c1319d8fc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4d0466001de274d21da52c1319d8fc2">&#9670;&nbsp;</a></span>FBXPath</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* FBXPath[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur initiale :</b><div class="fragment"><div class="line">=         {</div><div class="line">    <span class="stringliteral">&quot;FBXLoader/Models/Zombie/Phychozomb.fbx&quot;</span>,</div><div class="line">    <span class="stringliteral">&quot;FBXLoader/Models/Girl/Girl.fbx&quot;</span>,</div><div class="line">    <span class="stringliteral">&quot;FBXLoader/Models/Man/Man.fbx&quot;</span>,</div><div class="line">    <span class="stringliteral">&quot;FBXLoader/Models/Peggy/Peggy.fbx&quot;</span>,</div><div class="line">    <span class="stringliteral">&quot;FBXLoader/Models/mari/BrettHughes.fbx&quot;</span>}</div></div><!-- fragment -->
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a271af2d9baa3f6dafbf76206953e55b6">drawMocap()</a>, <a class="el" href="Mocap_8h.html#a0464e2711327b4982f1868f25cdd3e83">initAvatarMocap()</a>, et <a class="el" href="Window_8cpp.html#ab36adeaf63eed2490edca3408eac9c06">keydown()</a>.</p>
+
+</div>
+</div>
+<a id="a1c25fc415c3d497a62a45b2d8d93a484"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c25fc415c3d497a62a45b2d8d93a484">&#9670;&nbsp;</a></span>g_nXRes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int g_nXRes = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a8265dc2eb93655e9b289c61d3d5ab2cf">GetMembersCoordinates()</a>, <a class="el" href="Mocap_8cpp.html#a64598322ffd1fea52e969a6b0d5d2928">printFrameKinect()</a>, et <a class="el" href="Mocap_8h.html#a917d1117b31c893877cc84c57894d161">trackUser()</a>.</p>
+
+</div>
+</div>
+<a id="af3f2b94be6548dc5a21777b68d8a411d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3f2b94be6548dc5a21777b68d8a411d">&#9670;&nbsp;</a></span>g_nYRes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int g_nYRes = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a8265dc2eb93655e9b289c61d3d5ab2cf">GetMembersCoordinates()</a>, <a class="el" href="Mocap_8cpp.html#a64598322ffd1fea52e969a6b0d5d2928">printFrameKinect()</a>, et <a class="el" href="Mocap_8h.html#a917d1117b31c893877cc84c57894d161">trackUser()</a>.</p>
+
+</div>
+</div>
+<a id="a53a5320c369234d2316f843b3b8d6da0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53a5320c369234d2316f843b3b8d6da0">&#9670;&nbsp;</a></span>g_poseTimeoutToExit</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int g_poseTimeoutToExit = 2000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8cpp.html#a7387b0a732dd0e6cddfa0edf847a59cf">testPoseExit()</a>.</p>
+
+</div>
+</div>
+<a id="aa64100440ba9967f748473652756dc76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa64100440ba9967f748473652756dc76">&#9670;&nbsp;</a></span>GENOU_DROIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJointCoordinates.html">JointCoordinates</a>* GENOU_DROIT = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="DrawScene_8cpp.html#a8f89d39741504557872d54851dccc9ea">adjustSensitivity()</a>, <a class="el" href="DrawScene_8cpp.html#ab959667c5e38af0b16d7235336cc564b">affectAngleToNode()</a>, <a class="el" href="Mocap_8h.html#ac4046159c4db741eff35a955c5e6ac93">calculateMembersAngle()</a>, <a class="el" href="Mocap_8h.html#a4d0b3d36722ee10e793a4930802a5d19">DrawSkeleton()</a>, <a class="el" href="Mocap_8h.html#abe284ee34e36df76528f48d2dcf1515c">freeMocap()</a>, <a class="el" href="Mocap_8h.html#a7dbad2718de835759c8355053663062a">isCalibrationReady()</a>, et <a class="el" href="Mocap_8h.html#a25d7ea23a2e9d7ad361ae7b9d56f6de1">readMembersName()</a>.</p>
+
+</div>
+</div>
+<a id="ae99c2240e75f8b609785b866d549ae75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae99c2240e75f8b609785b866d549ae75">&#9670;&nbsp;</a></span>GENOU_GAUCHE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJointCoordinates.html">JointCoordinates</a>* GENOU_GAUCHE = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="DrawScene_8cpp.html#a8f89d39741504557872d54851dccc9ea">adjustSensitivity()</a>, <a class="el" href="DrawScene_8cpp.html#ab959667c5e38af0b16d7235336cc564b">affectAngleToNode()</a>, <a class="el" href="Mocap_8h.html#ac4046159c4db741eff35a955c5e6ac93">calculateMembersAngle()</a>, <a class="el" href="Mocap_8h.html#a4d0b3d36722ee10e793a4930802a5d19">DrawSkeleton()</a>, <a class="el" href="Mocap_8h.html#abe284ee34e36df76528f48d2dcf1515c">freeMocap()</a>, <a class="el" href="Mocap_8h.html#a7dbad2718de835759c8355053663062a">isCalibrationReady()</a>, et <a class="el" href="Mocap_8h.html#a25d7ea23a2e9d7ad361ae7b9d56f6de1">readMembersName()</a>.</p>
+
+</div>
+</div>
+<a id="a7285e846b2e871fac5a9c7b606d3f37b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7285e846b2e871fac5a9c7b606d3f37b">&#9670;&nbsp;</a></span>gSceneContext</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSceneContext.html">SceneContext</a>* gSceneContext = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a0b7f22583147b8ecbd40b58f014aeb5b">CreateContext()</a>, <a class="el" href="Mocap_8cpp.html#a8551ce7c8f0916fc2d9937393521d8eb">drawAvatar()</a>, <a class="el" href="Mocap_8h.html#a271af2d9baa3f6dafbf76206953e55b6">drawMocap()</a>, <a class="el" href="Mocap_8h.html#abe284ee34e36df76528f48d2dcf1515c">freeMocap()</a>, et <a class="el" href="Window_8cpp.html#ab36adeaf63eed2490edca3408eac9c06">keydown()</a>.</p>
+
+</div>
+</div>
+<a id="a0b46ec6645ef0166c4d8863ef2b7362d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b46ec6645ef0166c4d8863ef2b7362d">&#9670;&nbsp;</a></span>HANCHE_DROITE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJointCoordinates.html">JointCoordinates</a>* HANCHE_DROITE = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="DrawScene_8cpp.html#a8f89d39741504557872d54851dccc9ea">adjustSensitivity()</a>, <a class="el" href="DrawScene_8cpp.html#ab959667c5e38af0b16d7235336cc564b">affectAngleToNode()</a>, <a class="el" href="Mocap_8h.html#ac4046159c4db741eff35a955c5e6ac93">calculateMembersAngle()</a>, <a class="el" href="Game_8h.html#ad8e06baf3b119fde9bb12c050eccc5ef">drawPlane()</a>, <a class="el" href="Mocap_8h.html#a4d0b3d36722ee10e793a4930802a5d19">DrawSkeleton()</a>, <a class="el" href="Mocap_8h.html#abe284ee34e36df76528f48d2dcf1515c">freeMocap()</a>, <a class="el" href="Mocap_8h.html#a7dbad2718de835759c8355053663062a">isCalibrationReady()</a>, <a class="el" href="Mocap_8h.html#a25d7ea23a2e9d7ad361ae7b9d56f6de1">readMembersName()</a>, et <a class="el" href="Game_8h.html#ab00568868933dc93af0ce334ead3a813">setOrientationPlane()</a>.</p>
+
+</div>
+</div>
+<a id="ace861295a0abb69f07791c2b28d7942e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace861295a0abb69f07791c2b28d7942e">&#9670;&nbsp;</a></span>HANCHE_GAUCHE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJointCoordinates.html">JointCoordinates</a>* HANCHE_GAUCHE = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="DrawScene_8cpp.html#a8f89d39741504557872d54851dccc9ea">adjustSensitivity()</a>, <a class="el" href="DrawScene_8cpp.html#ab959667c5e38af0b16d7235336cc564b">affectAngleToNode()</a>, <a class="el" href="Mocap_8h.html#ac4046159c4db741eff35a955c5e6ac93">calculateMembersAngle()</a>, <a class="el" href="Game_8h.html#ad8e06baf3b119fde9bb12c050eccc5ef">drawPlane()</a>, <a class="el" href="Mocap_8h.html#a4d0b3d36722ee10e793a4930802a5d19">DrawSkeleton()</a>, <a class="el" href="Mocap_8h.html#abe284ee34e36df76528f48d2dcf1515c">freeMocap()</a>, <a class="el" href="Mocap_8h.html#a7dbad2718de835759c8355053663062a">isCalibrationReady()</a>, <a class="el" href="Mocap_8h.html#a25d7ea23a2e9d7ad361ae7b9d56f6de1">readMembersName()</a>, et <a class="el" href="Game_8h.html#ab00568868933dc93af0ce334ead3a813">setOrientationPlane()</a>.</p>
+
+</div>
+</div>
+<a id="a5a4fe1d46f2a5f3403b928580da09433"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a4fe1d46f2a5f3403b928580da09433">&#9670;&nbsp;</a></span>m_nTexMapX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int m_nTexMapX</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8cpp.html#a64598322ffd1fea52e969a6b0d5d2928">printFrameKinect()</a>.</p>
+
+</div>
+</div>
+<a id="af0fe316128a3775b38f940d1046d188f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0fe316128a3775b38f940d1046d188f">&#9670;&nbsp;</a></span>m_nTexMapY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int m_nTexMapY</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8cpp.html#a64598322ffd1fea52e969a6b0d5d2928">printFrameKinect()</a>.</p>
+
+</div>
+</div>
+<a id="aa4acb4ed2b829cd85d3e6a22f4c2e65a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4acb4ed2b829cd85d3e6a22f4c2e65a">&#9670;&nbsp;</a></span>m_pDepthHist</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float m_pDepthHist[10000]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8cpp.html#a64598322ffd1fea52e969a6b0d5d2928">printFrameKinect()</a>.</p>
+
+</div>
+</div>
+<a id="aae438b9a392def1d766e087596b5ba28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae438b9a392def1d766e087596b5ba28">&#9670;&nbsp;</a></span>m_poseTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t m_poseTime</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8cpp.html#a7387b0a732dd0e6cddfa0edf847a59cf">testPoseExit()</a>.</p>
+
+</div>
+</div>
+<a id="adad2559a7bcc40bf82a81c377d7082b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adad2559a7bcc40bf82a81c377d7082b9">&#9670;&nbsp;</a></span>m_poseUser</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">nite::UserId m_poseUser</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8cpp.html#a7387b0a732dd0e6cddfa0edf847a59cf">testPoseExit()</a>.</p>
+
+</div>
+</div>
+<a id="a4995a9e3216497167fcd8220bced2bee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4995a9e3216497167fcd8220bced2bee">&#9670;&nbsp;</a></span>m_pTexMap</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">openni::RGB888Pixel* m_pTexMap</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8cpp.html#a64598322ffd1fea52e969a6b0d5d2928">printFrameKinect()</a>.</p>
+
+</div>
+</div>
+<a id="a52aa6db25863687fab1f0b61b7707ef5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52aa6db25863687fab1f0b61b7707ef5">&#9670;&nbsp;</a></span>m_pUserTracker</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">nite::UserTracker* m_pUserTracker</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#abe284ee34e36df76528f48d2dcf1515c">freeMocap()</a>, <a class="el" href="Device_8h.html#a22af2136da18ddd7d6cf06a32eda89f4">initNiteAndOpenNi()</a>, et <a class="el" href="Mocap_8h.html#a917d1117b31c893877cc84c57894d161">trackUser()</a>.</p>
+
+</div>
+</div>
+<a id="a6ef3e9f894d04e54eefe482959768049"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ef3e9f894d04e54eefe482959768049">&#9670;&nbsp;</a></span>MAIN_DROITE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJointCoordinates.html">JointCoordinates</a>* MAIN_DROITE = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#ac4046159c4db741eff35a955c5e6ac93">calculateMembersAngle()</a>, <a class="el" href="Mocap_8h.html#a4d0b3d36722ee10e793a4930802a5d19">DrawSkeleton()</a>, <a class="el" href="Mocap_8h.html#abe284ee34e36df76528f48d2dcf1515c">freeMocap()</a>, <a class="el" href="Mocap_8h.html#a7dbad2718de835759c8355053663062a">isCalibrationReady()</a>, <a class="el" href="Menu_8cpp.html#a6cb4afb48ac218359be6ba1e4cf80a57">isClicked()</a>, <a class="el" href="CalibrationMode_8h.html#a3b54efe2686feccb8d6dc87cae6bb25d">isClickedButtonNext()</a>, <a class="el" href="Mocap_8cpp.html#a890e6e46f3fb19e074b3a7efec32c2be">isNextClicked()</a>, <a class="el" href="Mocap_8h.html#a9a0bbf68afce0ff658a9c42487c7bd6f">printHands()</a>, et <a class="el" href="Mocap_8h.html#a25d7ea23a2e9d7ad361ae7b9d56f6de1">readMembersName()</a>.</p>
+
+</div>
+</div>
+<a id="aea9c12696be083192af116082ff4b1bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea9c12696be083192af116082ff4b1bd">&#9670;&nbsp;</a></span>MAIN_GAUCHE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJointCoordinates.html">JointCoordinates</a>* MAIN_GAUCHE = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#ac4046159c4db741eff35a955c5e6ac93">calculateMembersAngle()</a>, <a class="el" href="Mocap_8h.html#a4d0b3d36722ee10e793a4930802a5d19">DrawSkeleton()</a>, <a class="el" href="Mocap_8h.html#abe284ee34e36df76528f48d2dcf1515c">freeMocap()</a>, <a class="el" href="Mocap_8h.html#a7dbad2718de835759c8355053663062a">isCalibrationReady()</a>, <a class="el" href="Menu_8cpp.html#a6cb4afb48ac218359be6ba1e4cf80a57">isClicked()</a>, <a class="el" href="Mocap_8cpp.html#a438709ff4449dc468d0fd2a02b7896b4">isPreviousClicked()</a>, <a class="el" href="Mocap_8h.html#a9a0bbf68afce0ff658a9c42487c7bd6f">printHands()</a>, et <a class="el" href="Mocap_8h.html#a25d7ea23a2e9d7ad361ae7b9d56f6de1">readMembersName()</a>.</p>
+
+</div>
+</div>
+<a id="a0e37bf37a1f00646e64357c96aaf2579"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e37bf37a1f00646e64357c96aaf2579">&#9670;&nbsp;</a></span>NUQUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJointCoordinates.html">JointCoordinates</a>* NUQUE = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="DrawScene_8cpp.html#a8f89d39741504557872d54851dccc9ea">adjustSensitivity()</a>, <a class="el" href="DrawScene_8cpp.html#ab959667c5e38af0b16d7235336cc564b">affectAngleToNode()</a>, <a class="el" href="Mocap_8h.html#ac4046159c4db741eff35a955c5e6ac93">calculateMembersAngle()</a>, <a class="el" href="Mocap_8h.html#a4d0b3d36722ee10e793a4930802a5d19">DrawSkeleton()</a>, <a class="el" href="Mocap_8h.html#abe284ee34e36df76528f48d2dcf1515c">freeMocap()</a>, <a class="el" href="Mocap_8h.html#a7dbad2718de835759c8355053663062a">isCalibrationReady()</a>, et <a class="el" href="Mocap_8h.html#a25d7ea23a2e9d7ad361ae7b9d56f6de1">readMembersName()</a>.</p>
+
+</div>
+</div>
+<a id="a99387032fcc5e487d6fd7e5de3aab7bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99387032fcc5e487d6fd7e5de3aab7bc">&#9670;&nbsp;</a></span>PIED_DROIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJointCoordinates.html">JointCoordinates</a>* PIED_DROIT = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#ac4046159c4db741eff35a955c5e6ac93">calculateMembersAngle()</a>, <a class="el" href="Mocap_8h.html#a4d0b3d36722ee10e793a4930802a5d19">DrawSkeleton()</a>, <a class="el" href="Mocap_8h.html#abe284ee34e36df76528f48d2dcf1515c">freeMocap()</a>, <a class="el" href="Mocap_8h.html#a7dbad2718de835759c8355053663062a">isCalibrationReady()</a>, et <a class="el" href="Mocap_8h.html#a25d7ea23a2e9d7ad361ae7b9d56f6de1">readMembersName()</a>.</p>
+
+</div>
+</div>
+<a id="ac365075f5c2ecb77d88e1f84b19aae5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac365075f5c2ecb77d88e1f84b19aae5b">&#9670;&nbsp;</a></span>PIED_GAUCHE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJointCoordinates.html">JointCoordinates</a>* PIED_GAUCHE = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#ac4046159c4db741eff35a955c5e6ac93">calculateMembersAngle()</a>, <a class="el" href="Mocap_8h.html#a4d0b3d36722ee10e793a4930802a5d19">DrawSkeleton()</a>, <a class="el" href="Mocap_8h.html#abe284ee34e36df76528f48d2dcf1515c">freeMocap()</a>, <a class="el" href="Mocap_8h.html#a7dbad2718de835759c8355053663062a">isCalibrationReady()</a>, et <a class="el" href="Mocap_8h.html#a25d7ea23a2e9d7ad361ae7b9d56f6de1">readMembersName()</a>.</p>
+
+</div>
+</div>
+<a id="aaed9648c316ffe7059c8f4b5f6afc601"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaed9648c316ffe7059c8f4b5f6afc601">&#9670;&nbsp;</a></span>printBackground</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool printBackground = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8cpp.html#a64598322ffd1fea52e969a6b0d5d2928">printFrameKinect()</a>, et <a class="el" href="Mocap_8h.html#a917d1117b31c893877cc84c57894d161">trackUser()</a>.</p>
+
+</div>
+</div>
+<a id="a277955e34b7de0cf5307f15036a5a293"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a277955e34b7de0cf5307f15036a5a293">&#9670;&nbsp;</a></span>stop</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct timespec start stop</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8cpp.html#a890e6e46f3fb19e074b3a7efec32c2be">isNextClicked()</a>, et <a class="el" href="Mocap_8cpp.html#a438709ff4449dc468d0fd2a02b7896b4">isPreviousClicked()</a>.</p>
+
+</div>
+</div>
+<a id="a953e674724cd88c00910a52cd6cb0aa5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a953e674724cd88c00910a52cd6cb0aa5">&#9670;&nbsp;</a></span>stopp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct timespec startt stopp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a917d1117b31c893877cc84c57894d161">trackUser()</a>.</p>
+
+</div>
+</div>
+<a id="ab162012753a4e53ec742fd3481c27340"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab162012753a4e53ec742fd3481c27340">&#9670;&nbsp;</a></span>tempGenouDroit</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJointCoordinates.html">JointCoordinates</a>* tempGenouDroit = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#ac4046159c4db741eff35a955c5e6ac93">calculateMembersAngle()</a>.</p>
+
+</div>
+</div>
+<a id="a201ef1e8c97e5f612008fd65bfcd3f33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a201ef1e8c97e5f612008fd65bfcd3f33">&#9670;&nbsp;</a></span>tempGenouGauche</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJointCoordinates.html">JointCoordinates</a>* tempGenouGauche = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#ac4046159c4db741eff35a955c5e6ac93">calculateMembersAngle()</a>.</p>
+
+</div>
+</div>
+<a id="a5b905c8775bf14dc4f4560fee4e0d4e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b905c8775bf14dc4f4560fee4e0d4e4">&#9670;&nbsp;</a></span>tempNuque</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJointCoordinates.html">JointCoordinates</a>* tempNuque = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#ac4046159c4db741eff35a955c5e6ac93">calculateMembersAngle()</a>.</p>
+
+</div>
+</div>
+<a id="aac6db334e2a38b71f7a1c456ffdd816d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac6db334e2a38b71f7a1c456ffdd816d">&#9670;&nbsp;</a></span>TETE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJointCoordinates.html">JointCoordinates</a>* TETE = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a4d0b3d36722ee10e793a4930802a5d19">DrawSkeleton()</a>, <a class="el" href="Mocap_8h.html#abe284ee34e36df76528f48d2dcf1515c">freeMocap()</a>, <a class="el" href="Mocap_8h.html#a7dbad2718de835759c8355053663062a">isCalibrationReady()</a>, et <a class="el" href="Mocap_8h.html#a25d7ea23a2e9d7ad361ae7b9d56f6de1">readMembersName()</a>.</p>
+
+</div>
+</div>
+<a id="a27e9ed753e897e86c9858169d67bb582"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27e9ed753e897e86c9858169d67bb582">&#9670;&nbsp;</a></span>TORSE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classJointCoordinates.html">JointCoordinates</a>* TORSE = new <a class="el" href="classJointCoordinates.html">JointCoordinates</a>()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="Mocap_8h.html#a4d0b3d36722ee10e793a4930802a5d19">DrawSkeleton()</a>, et <a class="el" href="Mocap_8h.html#abe284ee34e36df76528f48d2dcf1515c">freeMocap()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

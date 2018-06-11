@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MotionCaptureKinect: Référence du fichier FBXLoader/Common/Common.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">MotionCaptureKinect
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.14 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','Recherche');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_8bcdbab82ac64aad7a1f7d34c26ade1a.html">FBXLoader</a></li><li class="navelem"><a class="el" href="dir_242c31a221400f53dd1315e72ab8eedd.html">Common</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier Common.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;fbxsdk.h&gt;</code><br />
+</div>
+<p><a href="Common_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a85246640ca639423076907e122e65340"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Common_8h.html#a85246640ca639423076907e122e65340">InitializeSdkObjects</a> (FbxManager *&amp;pManager, FbxScene *&amp;pScene)</td></tr>
+<tr class="separator:a85246640ca639423076907e122e65340"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ac84f43f8294550afec605b53a6eee4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Common_8h.html#a7ac84f43f8294550afec605b53a6eee4">DestroySdkObjects</a> (FbxManager *pManager, bool pExitStatus)</td></tr>
+<tr class="separator:a7ac84f43f8294550afec605b53a6eee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a135cc3010728862cf73133797cd7c2d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Common_8h.html#a135cc3010728862cf73133797cd7c2d1">CreateAndFillIOSettings</a> (FbxManager *pManager)</td></tr>
+<tr class="separator:a135cc3010728862cf73133797cd7c2d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ad983969c5ca28dc9e801fd73e1ac2a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Common_8h.html#a6ad983969c5ca28dc9e801fd73e1ac2a">SaveScene</a> (FbxManager *pManager, FbxDocument *pScene, const char *pFilename, int pFileFormat=-1, bool pEmbedMedia=false)</td></tr>
+<tr class="separator:a6ad983969c5ca28dc9e801fd73e1ac2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac96045db38edcff017ced105750ae766"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Common_8h.html#ac96045db38edcff017ced105750ae766">LoadScene</a> (FbxManager *pManager, FbxDocument *pScene, const char *pFilename)</td></tr>
+<tr class="separator:ac96045db38edcff017ced105750ae766"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a135cc3010728862cf73133797cd7c2d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a135cc3010728862cf73133797cd7c2d1">&#9670;&nbsp;</a></span>CreateAndFillIOSettings()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CreateAndFillIOSettings </td>
+          <td>(</td>
+          <td class="paramtype">FbxManager *&#160;</td>
+          <td class="paramname"><em>pManager</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7ac84f43f8294550afec605b53a6eee4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ac84f43f8294550afec605b53a6eee4">&#9670;&nbsp;</a></span>DestroySdkObjects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DestroySdkObjects </td>
+          <td>(</td>
+          <td class="paramtype">FbxManager *&#160;</td>
+          <td class="paramname"><em>pManager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>pExitStatus</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Références <a class="el" href="Logger_8h.html#a7924ea74aab3505597ab4b3db868bafe">GlobalLogger</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="classSceneContext.html#ad8768b5caaf784be9cd21f7dd5c2f4c8">SceneContext::~SceneContext()</a>.</p>
+
+</div>
+</div>
+<a id="a85246640ca639423076907e122e65340"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85246640ca639423076907e122e65340">&#9670;&nbsp;</a></span>InitializeSdkObjects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InitializeSdkObjects </td>
+          <td>(</td>
+          <td class="paramtype">FbxManager *&amp;&#160;</td>
+          <td class="paramname"><em>pManager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FbxScene *&amp;&#160;</td>
+          <td class="paramname"><em>pScene</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Référencé par <a class="el" href="classSceneContext.html#ab775f8fbc44d107a8c1869ed21667b60">SceneContext::SceneContext()</a>.</p>
+
+</div>
+</div>
+<a id="ac96045db38edcff017ced105750ae766"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac96045db38edcff017ced105750ae766">&#9670;&nbsp;</a></span>LoadScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LoadScene </td>
+          <td>(</td>
+          <td class="paramtype">FbxManager *&#160;</td>
+          <td class="paramname"><em>pManager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FbxDocument *&#160;</td>
+          <td class="paramname"><em>pScene</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>pFilename</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6ad983969c5ca28dc9e801fd73e1ac2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ad983969c5ca28dc9e801fd73e1ac2a">&#9670;&nbsp;</a></span>SaveScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SaveScene </td>
+          <td>(</td>
+          <td class="paramtype">FbxManager *&#160;</td>
+          <td class="paramname"><em>pManager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FbxDocument *&#160;</td>
+          <td class="paramname"><em>pScene</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>pFilename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pFileFormat</em> = <code>-1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>pEmbedMedia</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

@@ -1,0 +1,5 @@
+INFO - Demarrage du Programme ! 
+INFO - Fichier de log cree avec succes ! 
+INFO - ------- CHARGEMENT DU PROGRAMMEEEEE ---------
+INFO - Librairies OpenNI initialisee avec succes ! 
+INFO - Recherche d'une camera Kinect en cours ... 
